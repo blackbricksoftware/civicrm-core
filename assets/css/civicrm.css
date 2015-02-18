@@ -1,0 +1,149 @@
+#crm-container {
+  
+}
+#crm-container legend {
+  margin-bottom: 0;
+}
+#crm-container .label {
+  color: #000000;
+  font-size: inherit;
+  text-align: left;
+}
+#crm-container label {
+  color: #000000;
+  text-align: left;
+  padding-left: 8px;
+}
+#crm-container table {
+  font-size: inherit;
+}
+#crm-container td,
+#crm-container tr td {
+  border: none;
+}
+#crm-container .crm-title {
+  border: medium none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+#crm-container .crm-title h1 {
+  margin: 0;
+  font-size: 40px;
+}
+@media (min-width: 1200px) {
+  #crm-container .crm-title h1 {
+    font-size: 60px;
+  }
+}
+#crm-container .crm-error {
+  border-radius: 4px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #b94a48;
+}
+#crm-container #intro_text h2 {
+  font-family: "source_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+}
+@media (min-width: 1200px) {
+  #crm-container #intro_text h2 {
+    font-size: 40px;
+  }
+}
+#crm-container #intro_text h2:first-child {
+  margin: -15px 0 20px 0;
+}
+#crm-container .contribution_amount-content > .price-set-row {
+  display: inline-block;
+  margin-right: 25px;
+  white-space: nowrap;
+}
+#crm-container .other_amount-section .label {
+  font-size: 0;
+}
+#crm-container .panel {
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+#crm-container select,
+#crm-container textarea,
+#crm-container input[type="text"],
+#crm-container input[type="password"],
+#crm-container input[type="datetime"],
+#crm-container input[type="datetime-local"],
+#crm-container input[type="date"],
+#crm-container input[type="month"],
+#crm-container input[type="time"],
+#crm-container input[type="week"],
+#crm-container input[type="number"],
+#crm-container input[type="email"],
+#crm-container input[type="url"],
+#crm-container input[type="search"],
+#crm-container input[type="tel"],
+#crm-container input[type="color"],
+#crm-container .inputbox {
+  display: inline-block;
+}
+#crm-container .content .crm-select2,
+#crm-container .content .select2-container {
+  width: 100%;
+}
+#crm-container .select2-container {
+  max-width: 100%;
+  padding: 0;
+  height: 39px;
+  line-height: 39px;
+}
+#crm-container .select2-container .select2-choice {
+  height: 39px;
+  line-height: 39px;
+}
+#crm-container .select2-container .select2-choice .select2-search-choice-close {
+  top: 12px;
+}
+#crm-container .select2-container .select2-choice .select2-arrow b {
+  background-position: 0 6px;
+}
+#crm-container .credit_card_type-section .crm-credit_card_type-icons a {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  background: url(../../../templates/t3_bs3_blank/i/creditcard-icons.png) no-repeat 0 0 transparent;
+  text-indent: -20000px;
+  margin-right: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  border: 1px solid #FFFFFF;
+}
+#crm-container .credit_card_type-section .crm-credit_card_type-icons .crm-credit_card_type-icon-visa {
+  background-position: -50px 0;
+}
+#crm-container .credit_card_type-section .crm-credit_card_type-icons .crm-credit_card_type-icon-mastercard {
+  background-position: -100px 0;
+}
+#crm-container .credit_card_type-section .crm-credit_card_type-icons .crm-credit_card_type-icon-amex {
+  background-position: -150px 0;
+}
+#crm-container .credit_card_type-section .crm-credit_card_type-icons .crm-credit_card_type-icon-discover {
+  background-position: -200px 0;
+}
+#crm-container .credit_card_type-section .crm-credit_card_type-icons .crm-credit_card_type-icon-jcb {
+  background-position: -250px 0;
+}
+#crm-container .credit_card_type-section .crm-credit_card_type-icons .crm-credit_card_type-icon-unionpay {
+  background-position: -300px 0;
+}
+#crm-container .cvv2-icon {
+  display: block;
+  width: 50px;
+  height: 30px;
+  background: url(../../../templates/t3_bs3_blank/i/creditcard-icons.png) no-repeat 0 0 transparent;
+}
+#crm-container .crm-marker {
+  color: red;
+  padding: 0px 10px 0px 0px;
+}

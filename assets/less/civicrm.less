@@ -1,0 +1,142 @@
+#crm-container {
+	legend {
+		margin-bottom: 0;
+	}
+	.label {
+		color: #000000;
+		font-size: inherit;
+		text-align: left;
+	}
+	label {
+	  color: #000000;
+	  text-align: left;
+	  padding-left: 8px;
+	}
+	table {
+		font-size: inherit;
+	}
+	td, tr td {
+		border: none;
+	}
+	.crm-title {
+		border: medium none;
+		margin: 0 0 20px;
+		padding: 0;
+		h1 {
+			margin: 0;
+			font-size: 40px;
+			@media (min-width: @screen-lg-min) {
+				font-size: 60px;
+			}
+		}
+	}
+	.crm-error {
+		border-radius: 4px;
+		margin-bottom: 25px;
+		padding: 15px;
+		background-color: #f2dede;
+		border-color: #ebccd1;
+		color: #b94a48;
+	}
+	#intro_text {
+		h2 {
+			font-family: @font-family-base;
+			font-size: 30px;
+			@media (min-width: @screen-lg-min) {
+				font-size: 40px;
+			}
+			&:first-child {
+				margin: -15px 0 20px 0;
+			}
+		}
+	}
+	
+	.contribution_amount-content {
+		> .price-set-row {
+			display: inline-block;
+			margin-right: 25px;
+			white-space: nowrap;
+		}
+	}
+	
+	.other_amount-section .label {
+		font-size: 0;
+	}
+	
+	.panel {
+		background: none;
+		border: none;
+		box-shadow: none;
+		margin-bottom: 0;
+	}
+	
+	select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .inputbox {
+		display: inline-block;
+	}
+	
+	.content {
+		.crm-select2, .select2-container {
+			width: 100%;
+		}
+	}
+	
+	.select2-container {
+		max-width: 100%;
+		padding: 0;
+		height: 39px;
+		line-height: 39px;
+		.select2-choice {
+			height: 39px;
+			line-height: 39px;
+			.select2-search-choice-close {
+				top: 12px;
+			}
+			.select2-arrow b {
+				background-position: 0 6px;
+			}
+		}
+	}
+	
+	/* Styles for credit card payment logos */
+	.credit_card_type-section {
+		.crm-credit_card_type-icons a {
+		  display: inline-block;
+		  width: 50px;
+		  height: 30px;
+		  background: url(../i/creditcard-icons.png) no-repeat 0 0 transparent;
+		  text-indent: -20000px;
+		  margin-right: 10px;
+		  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+		  border-radius: 3px;
+		  border: 1px solid #FFFFFF;
+		}
+		.crm-credit_card_type-icons .crm-credit_card_type-icon-visa {
+		  background-position: -50px 0;
+		}
+		.crm-credit_card_type-icons .crm-credit_card_type-icon-mastercard {
+		  background-position: -100px 0;
+		}
+		.crm-credit_card_type-icons .crm-credit_card_type-icon-amex {
+		  background-position: -150px 0;
+		}
+		.crm-credit_card_type-icons .crm-credit_card_type-icon-discover {
+		  background-position: -200px 0;
+		}
+		.crm-credit_card_type-icons .crm-credit_card_type-icon-jcb {
+		  background-position: -250px 0;
+		}
+		.crm-credit_card_type-icons .crm-credit_card_type-icon-unionpay {
+		  background-position: -300px 0;
+		}
+	}
+	.cvv2-icon {
+	  display: block;
+	  width: 50px;
+	  height: 30px;
+	  background: url(../i/creditcard-icons.png) no-repeat 0 0 transparent;
+	}
+	.crm-marker {
+	  color: red;
+	  padding: 0px 10px 0px 0px;
+	}
+}
