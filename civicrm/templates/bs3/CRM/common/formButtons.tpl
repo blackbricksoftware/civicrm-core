@@ -36,7 +36,7 @@
           {assign var='html' value=$form.buttons.$key.html}
         {/if}
         {capture assign=validate}{$key|crmBtnValidate}{/capture}
-        <span class="crm-button crm-button-type-{$key|crmBtnType} crm-button{$key}"{if $buttonStyle} style="{$buttonStyle}"{/if}>{$html|crmAddClass:$validate}</span>
+        <span class="crm-button crm-button-type-{$key|crmBtnType} crm-button{$key}"{if $buttonStyle} style="{$buttonStyle}"{/if}>{$html|crmAddClass:$validate|crmAddClass:'btn btn-primary'}</span>
     {/if}
   {/foreach}
 {/crmRegion}

@@ -38,9 +38,6 @@
 
 {else}
 <div class="crm-group tell_friend_form-group">
-<table class="form-layout-compressed">
-  <tr>
-    <td colspan=2>
             <p>
                 {if $context EQ 'pcp'}
                     {ts 1=$pcpTitle}Spread the word about this fundraising page (%1). Add your personal message below. A link to the fundraising page will be automatically included in the email.{/ts}
@@ -48,25 +45,19 @@
                     {$intro}
                 {/if}
             </p>
-    </td>
-  </tr>
+<div class="row">
+    <div class="label col-xs-12 col-sm-3">{$form.from_name.label}</div>
+    <div class="content col-xs-12 col-sm-9">{$form.from_name.html} &lt;{$form.from_email.html}&gt;</div>
+  </div>
+<div class="row">
+    <div class="label col-xs-12 col-sm-3">{$form.suggested_message.label}</div>
+    <div class="content col-xs-12 col-sm-9">{$form.suggested_message.html}</div>
+  </div>
 
-  <tr>
-    <td class="right font-size12pt">{$form.from_name.label}&nbsp;&nbsp;</td>
-    <td class="font-size12pt">{$form.from_name.html} &lt;{$form.from_email.html}&gt;</td>
-  </tr>
-  <tr>
-    <td class="label font-size12pt">{$form.suggested_message.label}</td>
-    <td>{$form.suggested_message.html}</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td>
+<br>
     <fieldset class="crm-group tell_friend_emails-group">
         <legend>{ts}Send to these Friend(s){/ts}</legend>
-        <table>
-          <tr class="columnheader">
+        <table class="table">
             <td>{ts}First Name{/ts}</td>
             <td>{ts}Last Name{/ts}</td>
             <td>{ts}Email Address{/ts}</td>
@@ -81,13 +72,9 @@
           {/section}
         </table>
     </fieldset>
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>{$form.buttons.html}</td>
-  </tr>
-</table>
+  
+<p class="text-center">{$form.buttons.html|crmAddClass:'btn btn-primary'}</p>
+  
 </div>
 {/if}
 

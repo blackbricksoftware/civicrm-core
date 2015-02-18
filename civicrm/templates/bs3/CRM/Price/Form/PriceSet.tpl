@@ -23,7 +23,7 @@
  | see the CiviCRM license FAQ at http://civicrm.org/licensing        |
  +--------------------------------------------------------------------+
 *}
-<div id="priceset" class="crm-section price_set-section">
+<div id="priceset" class="crm-section price_set-section form-group clearfix">
     {if $priceSet.help_pre}
         <div class="messages help">{$priceSet.help_pre}</div>
     {/if}
@@ -39,9 +39,8 @@
             <div class="crm-section {$element.name}-section">
             {if ($element.html_type eq 'CheckBox' || $element.html_type == 'Radio') && $element.options_per_line}
               {assign var="element_name" value="price_"|cat:$field_id}
-          <div class="row">
-          <div class="form-group label col-sm-2">{$form.$element_name.label}</div>
-                <div class="content {$element.name}-content col-sm-6 col-sm-offset-4 col-sm-pull-2">
+          <div class="label col-xs-12 col-sm-4 col-md-3">{$form.$element_name.label}</div>
+                <div class="content {$element.name}-content col-xs-12 col-sm-8 col-md-9">
                 {assign var="rowCount" value="1"}
                 {assign var="count" value="1"}
                 {foreach name=outer key=key item=item from=$form.$element_name}
@@ -67,8 +66,8 @@
 
                 {assign var="element_name" value="price_"|cat:$field_id}
 
-                <div class="form-group label col-sm-2">{$form.$element_name.label}</div>
-                <div class="content {$element.name}-content col-sm-6 col-sm-offset-4 col-sm-pull-2">{$form.$element_name.html}
+                <div class="label col-xs-12 col-sm-4 col-md-3">{$form.$element_name.label}</div>
+                <div class="content {$element.name}-content col-xs-12 col-sm-8 col-md-9">{$form.$element_name.html}
                   {if $element.is_display_amounts && $element.html_type eq 'Text'}
                     <span class="price-field-amount">
                       {foreach item=option from=$element.options}{$option.amount|crmMoney}{/foreach}

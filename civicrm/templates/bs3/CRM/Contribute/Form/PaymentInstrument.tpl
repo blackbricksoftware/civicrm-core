@@ -25,7 +25,7 @@
 *}
 {* this template is used for adding/editing/deleting Payment-Instrument  *}
 <div class="crm-block crm-form-block crm-contribution-payment_instrument-form-block">
-<fieldset><legend>{if $action eq 1}{ts}New Payment Instrument{/ts}{elseif $action eq 2}{ts}Edit Payment Instrument{/ts}{else}{ts}Delete Payment Instrument{/ts}{/if}</legend>
+<fieldset><div class="panel panel-heading"><legend>{if $action eq 1}{ts}New Payment Instrument{/ts}{elseif $action eq 2}{ts}Edit Payment Instrument{/ts}{else}{ts}Delete Payment Instrument{/ts}{/if}</legend></div>
   <div class="crm-submit-buttons">{include file="CRM/common/formButtons.tpl" location="top"}</div>
    {if $action eq 8}
       <div class="messages status no-popup">

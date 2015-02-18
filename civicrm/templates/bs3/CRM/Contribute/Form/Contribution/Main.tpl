@@ -99,7 +99,7 @@
 
   {capture assign='reqMark'}<span class="marker" title="{ts}This field is required.{/ts}">*</span>{/capture}
   <div class="crm-contribution-page-id-{$contributionPageID} crm-block crm-contribution-main-form-block">
-  <div id="intro_text" class="form-group crm-section intro_text-section alert alert-info">
+  <div id="intro_text" class="form-group crm-section intro_text-section">
     {$intro_text}
   </div>
   {include file="CRM/common/cidzero.tpl"}
@@ -117,30 +117,28 @@
 
   {if $pledgeBlock}
     {if $is_pledge_payment}
-    <div class="crm-section {$form.pledge_amount.name}-section">
-      <div class="label">{$form.pledge_amount.label}&nbsp;<span class="marker">*</span></div>
-      <div class="content">{$form.pledge_amount.html}</div>
-      <div class="clear"></div>
+    <div class="crm-section {$form.pledge_amount.name}-section form-group clearfix">
+      <div class="label col-sm-3">{$form.pledge_amount.label}&nbsp;<span class="marker">*</span></div>
+      <div class="content col-sm-9">{$form.pledge_amount.html}</div>
     </div>
       {else}
-    <div class="crm-section {$form.is_pledge.name}-section form-group ">
-      <div class="form-group col-sm-2 label">&nbsp;</div>
-      <div class="form-group col-sm-6 content">
+    <div class="crm-section {$form.is_pledge.name}-section form-group clearfix">
+      <div class="label col-sm-3">&nbsp;</div>
+      <div class="content col-sm-9">
         {$form.is_pledge.html}&nbsp;
         {if $is_pledge_interval}
           {$form.pledge_frequency_interval.html}&nbsp;
         {/if}
         {$form.pledge_frequency_unit.html}<span id="pledge_installments_num">&nbsp;{ts}for{/ts}&nbsp;{$form.pledge_installments.html}&nbsp;{ts}installments.{/ts}</span>
       </div>
-      <div class="clear"></div>
     </div>
     {/if}
   {/if}
 
   {if $form.is_recur}
-  <div class="crm-section {$form.is_recur.name}-section">
-    <div class="label">&nbsp;</div>
-    <div class="content">
+  <div class="crm-section {$form.is_recur.name}-section form-group clearfix">
+    {* <div class="label col-xs-12 col-sm-4 col-md-3">&nbsp;</div> *}
+    <div class="content col-xs-12 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
       {$form.is_recur.html} {$form.is_recur.label} {ts}every{/ts}
       {if $is_recur_interval}
         {$form.frequency_interval.html}
@@ -169,25 +167,24 @@
   </div>
   {/if}
   {if $pcpSupporterText}
-  <div class="crm-section pcpSupporterText-section">
-    <div class="label">&nbsp;</div>
-    <div class="content">{$pcpSupporterText}</div>
-    <div class="clear"></div>
+  <div class="crm-section pcpSupporterText-section form-group clearfix">
+    <div class="label col-xs-12 col-sm-4 col-md-3">&nbsp;</div>
+    <div class="content col-xs-12 col-sm-8 col-md-9">{$pcpSupporterText}</div>
   </div>
   {/if}
   {assign var=n value=email-$bltID}
-  <div class="crm-section {$form.$n.name}-section">
-    <div class="col-sm-3 label">{$form.$n.label}</div>
-    <div class="form-group content col-sm-6 col-sm-offset-3 col-sm-pull-2">
+  <div class="crm-section {$form.$n.name}-section form-group clearfix">
+    <div class="label col-xs-12 col-sm-4 col-md-3">{$form.$n.label}</div>
+    <div class="content col-xs-12 col-sm-8 col-md-9">
       {$form.$n.html}
     </div>
     <div class="clear"></div>
   </div>
 
   {if $form.is_for_organization}
-  <div class="crm-section {$form.is_for_organization.name}-section">
-    <div class="label">&nbsp;</div>
-    <div class="content">
+  <div class="crm-section {$form.is_for_organization.name}-section form-group clearfix">
+    <div class="label col-xs-12 col-sm-4 col-md-3">&nbsp;</div>
+    <div class="content col-xs-12 col-sm-8 col-md-9">
       {$form.is_for_organization.html}&nbsp;{$form.is_for_organization.label}
     </div>
     <div class="clear"></div>
@@ -195,7 +192,7 @@
   {/if}
 
   {if $is_for_organization}
-  <div id='onBehalfOfOrg' class="crm-section">
+  <div id='onBehalfOfOrg' class="crm-section clearfix">
     {include file="CRM/Contribute/Form/Contribution/OnBehalfOf.tpl"}
   </div>
   {/if}
@@ -207,13 +204,13 @@
   {if $honor_block_is_active}
   <fieldset class="crm-group honor_block-group">
     {include file="CRM/Contribute/Form/SoftCredit.tpl"}
-    <div id="honorType" class="honoree-name-email-section">
+    <div id="honorType" class="honoree-name-email-section clearfix">
       {include file="CRM/UF/Form/Block.tpl" fields=$honoreeProfileFields mode=8 prefix='honor'}
     </div>
   </fieldset>
   {/if}
 
-  <div class="crm-group custom_pre_profile-group">
+  <div class="crm-group custom_pre_profile-group clearfix">
   {include file="CRM/UF/Form/Block.tpl" fields=$customPre}
   </div>
 
@@ -233,20 +230,18 @@
         </div>
         <div class="clear"></div>
       </div>
-      <div id="nickID" class="crm-section pcp_roll_nickname-section">
-        <div class="label">{$form.pcp_roll_nickname.label}</div>
-        <div class="content">{$form.pcp_roll_nickname.html}
+      <div id="nickID" class="crm-section pcp_roll_nickname-section form-group clearfix">
+        <div class="label col-xs-12 col-sm-4 col-md-3">{$form.pcp_roll_nickname.label}</div>
+        <div class="content col-xs-12 col-sm-8 col-md-9">{$form.pcp_roll_nickname.html}
           <div class="description">{ts}Enter the name you want listed with this contribution. You can use a nick name like 'The Jones Family' or 'Sarah and Sam'.{/ts}</div>
         </div>
-        <div class="clear"></div>
       </div>
-      <div id="personalNoteID" class="crm-section pcp_personal_note-section">
-        <div class="label">{$form.pcp_personal_note.label}</div>
-        <div class="content">
+      <div id="personalNoteID" class="crm-section pcp_personal_note-section form-group clearfix">
+        <div class="label col-xs-12 col-sm-4 col-md-3">{$form.pcp_personal_note.label}</div>
+        <div class="content col-xs-12 col-sm-8 col-md-9">
           {$form.pcp_personal_note.html}
           <div class="description">{ts}Enter a message to accompany this contribution.{/ts}</div>
         </div>
-        <div class="clear"></div>
       </div>
     </div>
   </fieldset>
@@ -255,29 +250,27 @@
   {if $form.payment_processor.label}
   {* PP selection only works with JS enabled, so we hide it initially *}
   <fieldset class="crm-group payment_options-group" style="display:none;">
-    <legend>{ts}Payment Options{/ts}</legend>
-    <div class="crm-section payment_processor-section">
-      <div class="label">{$form.payment_processor.label}</div>
-      <div class="content">{$form.payment_processor.html}</div>
-      <div class="clear"></div>
+    <div class="panel panel-heading"><legend>{ts}Payment Options{/ts}</legend></div>
+    <div class="crm-section payment_processor-section form-group clearfix">
+      <div class="label col-xs-12 col-sm-4 col-md-3">{$form.payment_processor.label}</div>
+      <div class="content col-xs-12 col-sm-8 col-md-9">{$form.payment_processor.html}</div>
     </div>
   </fieldset>
   {/if}
 
   {if $is_pay_later}
   <fieldset class="crm-group pay_later-group">
-    <legend>{ts}Payment Options{/ts}</legend>
-    <div class="crm-section pay_later_receipt-section">
-      <div class="label">&nbsp;</div>
-      <div class="content">
+    <div class="panel panel-heading"><legend>{ts}Payment Options{/ts}</legend></div>
+    <div class="crm-section pay_later_receipt-section form-group clearfix">
+      <div class="label col-xs-12 col-sm-4 col-md-3">&nbsp;</div>
+      <div class="content col-xs-12 col-sm-8 col-md-9">
         [x] {$pay_later_text}
       </div>
-      <div class="clear"></div>
     </div>
   </fieldset>
   {/if}
 
-  <div id="billing-payment-block" class="col-sm-12">
+  <div id="billing-payment-block clearfix">
     {* If we have a payment processor, load it - otherwise it happens via ajax *}
     {if $ppType}
       {include file="CRM/Contribute/Form/Contribution/Main.tpl" snippet=4}
@@ -285,14 +278,14 @@
   </div>
   {include file="CRM/common/paymentBlock.tpl"}
 
-  <div class="crm-group custom_post_profile-group">
+  <div class="crm-group custom_post_profile-group clearfix">
   {include file="CRM/UF/Form/Block.tpl" fields=$customPost}
   </div>
 
   {if $is_monetary and $form.bank_account_number}
   <div id="payment_notice">
     <fieldset class="crm-group payment_notice-group">
-      <legend>{ts}Agreement{/ts}</legend>
+     <div class="panel panel-heading"> <legend>{ts}Agreement{/ts}</legend> </div>
       {ts}Your account data will be used to charge your bank account via direct debit. While submitting this form you agree to the charging of your bank account via direct debit.{/ts}
     </fieldset>
   </div>
@@ -301,11 +294,11 @@
   {if $isCaptcha}
     {include file='CRM/common/ReCAPTCHA.tpl'}
   {/if}
-  <div id="crm-submit-buttons" class="col-sm-4 form-group col-sm-offset-10 crm-submit-buttons">
+  <div id="crm-submit-buttons" class="col-xs-12 col-sm-4 form-group col-sm-offset-8 text-center crm-submit-buttons">
   {include file="CRM/common/formButtons.tpl" location="bottom"}
   </div>
   {if $footer_text}
-  <div id="footer_text" class="col-sm-2 crm-section contribution_footer_text-section">
+  <div id="footer_text" class="crm-section contribution_footer_text-section">
     <p>{$footer_text}</p>
   </div>
   {/if}
