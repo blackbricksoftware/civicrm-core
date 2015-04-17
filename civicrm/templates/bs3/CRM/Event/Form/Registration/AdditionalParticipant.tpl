@@ -41,7 +41,13 @@
     </div>
 {/if}
 
+<div class="row">
+
+<div class="col-xs-6 col-sm-6">
 {include file="CRM/UF/Form/Block.tpl" fields=$additionalCustomPre}
+</div>
+
+<div class="col-xs-6 col-sm-6">
 
 {if $priceSet && $allowGroupOnWaitlist}
     {include file="CRM/Price/Form/ParticipantCount.tpl"}
@@ -68,9 +74,12 @@
 
 {include file="CRM/UF/Form/Block.tpl" fields=$additionalCustomPost}
 
-<div id="crm-submit-buttons">
-    {include file="CRM/common/formButtons.tpl"}
 </div>
+</div>
+</div>
+
+<div id="crm-submit-buttons" class="col-xs-12 col-sm-6 form-group col-sm-offset-6 text-center">
+    {include file="CRM/common/formButtons.tpl"}
 </div>
 
 {if $priceSet && $allowGroupOnWaitlist}

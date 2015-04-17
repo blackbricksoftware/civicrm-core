@@ -39,8 +39,8 @@
             <div class="crm-section {$element.name}-section clearfix">
             {if ($element.html_type eq 'CheckBox' || $element.html_type == 'Radio') && $element.options_per_line}
               {assign var="element_name" value="price_"|cat:$field_id}
-          <div class="label col-xs-12 col-sm-4 col-md-3">{$form.$element_name.label}</div>
-                <div class="content {$element.name}-content col-xs-12 col-sm-8 col-md-9">
+          <div class="label col-xs-12 col-sm-6">{$form.$element_name.label}</div>
+                <div class="content {$element.name}-content col-xs-12 col-sm-6">
                 {assign var="rowCount" value="1"}
                 {assign var="count" value="1"}
                 {foreach name=outer key=key item=item from=$form.$element_name}

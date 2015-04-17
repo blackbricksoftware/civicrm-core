@@ -44,7 +44,8 @@
         {/if}
 
         {if $mode ne 8 && $action ne 1028 && $action ne 4}
-        <fieldset class="col-sm-12 crm-profile crm-profile-id-{$field.group_id} crm-profile-name-{$field.groupName} form-group "><legend class="alert alert-info">{$field.groupTitle}</legend>
+        <fieldset class="col-sm-12 crm-profile crm-profile-id-{$field.group_id} crm-profile-name-{$field.groupName} form-group ">
+			<div class="panel-heading"><legend>{$field.groupTitle}</legend></div>
         {/if}
 
         {if ($form.formName eq 'Confirm' OR $form.formName eq 'ThankYou') AND $prefix neq 'honor'}
@@ -71,7 +72,7 @@
           </div>
         {/if}
         {if $field.options_per_line != 0}
-          <div class="crm-section editrow_{$n}-section form-item" id="editrow-{$n}">
+          <div class="crm-section editrow_{$n}-section form-item clearfix" id="editrow-{$n}">
             <div class="label option-label">{$form.$n.label}</div>
             <div class="content 3">
               {assign var="count" value="1"}
@@ -101,17 +102,17 @@
             <div class="clear"></div>
           </div>
         {else}
-          <div class="crm-section editrow_{$n}-section form-item form-group" id="editrow-{$n}">
-            <div class="col-sm-2 label form-group">
+          <div class="crm-section editrow_{$n}-section form-item form-group clearfix" id="editrow-{$n}">
+            <div class="col-xs-12 col-sm-6 label">
               {if $prefix}{$form.$prefix.$n.label}{else}{$form.$n.label}{/if}
             </div>
-            <div class="col-sm-6 col-sm-offset-4 col-sm-pull-2 content form-group">
+            <div class="col-sm-6 content">
               {if $n|substr:0:3 eq 'im-'}
                 {assign var="provider" value=$n|cat:"-provider_id"}
-                {$form.$provider.html}&nbsp;
+                {$form.$provider.html|crmAddClass:'form-control'}&nbsp;
               {elseif $n|substr:0:4 eq 'url-'}
                 {assign var="websiteType" value=$n|cat:"-website_type_id"}
-                {$form.$websiteType.html}&nbsp;
+                {$form.$websiteType.html|crmAddClass:'form-control'}&nbsp;
               {/if}
 
               {if $n eq 'email_greeting' or  $n eq 'postal_greeting' or $n eq 'addressee'}
@@ -126,11 +127,11 @@
               {elseif $n|substr:0:5 eq 'phone'}
                 {assign var="phone_ext_field" value=$n|replace:'phone':'phone_ext'}
                 {if $prefix}{$form.$prefix.$n.html}{else}{$form.$n.html}{/if}
-                {if $form.$phone_ext_field.html}
-                  &nbsp;{$form.$phone_ext_field.html}
+                {if $form.$phone_ext_field.html|crmAddClass:'form-control'}
+                  &nbsp;{$form.$phone_ext_field.html|crmAddClass:'form-control'}
                 {/if}
               {else}
-                {if $prefix}{$form.$prefix.$n.html}{else}{$form.$n.html}{/if}
+                {if $prefix}{$form.$prefix.$n.html|crmAddClass:'form-control'}{else}{$form.$n.html|crmAddClass:'form-control'}{/if}
               {/if}
 
             {*CRM-4564*}

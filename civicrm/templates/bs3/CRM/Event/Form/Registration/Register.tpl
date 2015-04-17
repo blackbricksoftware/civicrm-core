@@ -81,16 +81,18 @@
 
     {if $form.additional_participants.html}
       <div class="crm-section additional_participants-section" id="noOfparticipants">
-        <div class="label">{$form.additional_participants.label}</div>
+        <div class="label"></div>
         <div class="content">
-          {$form.additional_participants.html}{if $contact_id || $contact_id == NULL} &nbsp; ({ts}including yourself{/ts}){/if}
-          <br/>
-          <span
-            class="description">{ts}Fill in your registration information on this page. If you are registering additional people, you will be able to enter their registration information after you complete this page and click &quot;Continue&quot;.{/ts}</span>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">{$form.additional_participants.label}</div>
+				<div class="col-xs-12 col-sm-6">{$form.additional_participants.html|crmAddClass:'form-control'}{if $contact_id || $contact_id == NULL} &nbsp; ({ts}including yourself{/ts}){/if}</div>
+			</div>
+          <span class="description">{ts}Fill in your registration information on this page. If you are registering additional people, you will be able to enter their registration information after you complete this page and click &quot;Continue&quot;.{/ts}</span>
         </div>
         <div class="clear"></div>
       </div>
     {/if}
+    <br><br>
 
     {* User account registration option. Displays if enabled for one of the profiles on this page. *}
     {include file="CRM/common/CMSUser.tpl"}
@@ -166,7 +168,7 @@
       {include file='CRM/common/ReCAPTCHA.tpl'}
     {/if}
 
-    <div id="crm-submit-buttons" class="crm-submit-buttons">
+    <div id="crm-submit-buttons" class="col-xs-12 col-sm-4 form-group col-sm-offset-8 text-center crm-submit-buttons">
       {include file="CRM/common/formButtons.tpl" location="bottom"}
     </div>
 

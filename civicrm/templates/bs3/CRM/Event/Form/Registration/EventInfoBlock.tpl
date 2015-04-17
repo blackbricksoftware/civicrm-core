@@ -24,7 +24,7 @@
  +--------------------------------------------------------------------+
 *}
 {* Block displays key event info for Registration Confirm and Thankyou pages *}
-<table class="form-layout">
+<table class="form-layout table">
   <tr>
     <td colspan="2">
     {if $context EQ 'ThankYou'} {* Provide link back to event info page from Thank-you page *}

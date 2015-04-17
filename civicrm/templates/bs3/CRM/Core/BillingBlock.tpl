@@ -97,7 +97,7 @@
 								</div>
 								<div class="crm-section {$form.credit_card_exp_date.name}-section form-group clearfix">
 									<div class="label col-xs-12 col-sm-6">{$form.credit_card_exp_date.label} {$reqMark}</div>
-									<div class="content col-sm-6">{$form.credit_card_exp_date.html}</div>
+									<div class="content col-sm-6">{$form.credit_card_exp_date.html|crmAddClass:'form-control'}</div>
 								</div>
 							{/if}
 						</div>

@@ -24,13 +24,13 @@
  +--------------------------------------------------------------------+
 *}
 {if $noCalcValueDisplay neq 'false'}
-<div id="pricesetTotal" class="crm-section section-pricesetTotal">
-  <div class="label" id="pricelabel"><label>
+<div id="pricesetTotal" class="crm-section section-pricesetTotal clearfix">
+  <div class="label col-xs-12 col-sm-6" id="pricelabel"><label>
     {if ( $extends eq 'Contribution' ) || ( $extends eq 'Membership' )}
       {ts}Total Amount{/ts}{else}{ts}Total Fee(s){/ts}
  			{if $isAdditionalParticipants} {ts}for this participant{/ts}{/if}
     {/if}</label></div>
-  <div class="content calc-value" id="pricevalue" ></div>
+  <div class="content calc-value col-xs-12 col-sm-6" id="pricevalue" ></div>
 </div>
 {/if}
 <script type="text/javascript">
