@@ -158,7 +158,7 @@
     {/if}
 
     {if $mode eq 4}
-      <div class="crm-submit-buttons">
+      <div class="crm-submit-buttons col-xs-12 col-sm-4 form-group col-sm-offset-8 text-center">
         {$form.buttons.html}
       </div>
     {/if}

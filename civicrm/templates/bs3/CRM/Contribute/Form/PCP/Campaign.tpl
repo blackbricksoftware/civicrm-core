@@ -81,7 +81,7 @@
   </tr>
 </table>
 </div>
-<div class="crm-submit-buttons">{include file="CRM/common/formButtons.tpl" location="bottom"}</div>
+<div class="crm-submit-buttons col-xs-12 col-sm-4 form-group col-sm-offset-8 text-center">{include file="CRM/common/formButtons.tpl" location="bottom"}</div>
 </fieldset>
 <script type="text/javascript">
     // Always open attachment div by default for this form

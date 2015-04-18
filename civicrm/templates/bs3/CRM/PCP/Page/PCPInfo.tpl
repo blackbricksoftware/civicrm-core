@@ -36,7 +36,7 @@
             {if $owner.start_date}<br />{ts}This campaign is active from{/ts} <strong>{$owner.start_date|truncate:10:''|crmDate}</strong> {ts}until{/ts} <strong>{$owner.end_date|truncate:10:''|crmDate}</strong>.{/if}
         {/if}
         <br /><br />
-        <table class="form-layout-compressed">
+        <table class="form-layout-compressed table table-striped">
         <tr><td colspan="2"><strong>{ts}You can{/ts}:</strong></td></tr>
     {foreach from = $links key = k item = v}
           <tr>
@@ -49,15 +49,13 @@
        </table>
      <div class="icon tip-icon"></div>
      <strong>{ts}Tip{/ts}</strong> - <span class="description">{ts}You must be logged in to your account to access the editing options above. (If you visit this page without logging in, you will be viewing the page in "live" mode - as your visitors and friends see it.){/ts}</span>
+     <hr>
 </div>
 {/if}
 <div class="campaign">
 {crmRegion name="pcp-page-pcpinfo"}
-    <div class="pcp-intro-text">
-      {$pcp.intro_text}
-  </div>
     {if $image}
-    <div class="pcp-image">
+    <div class="pcp-image pull-right thumbnail">
        {$image}
      </div>
      {/if}
@@ -66,21 +64,26 @@
       {if $pcp.is_thermometer}
       <div class="thermometer-wrapper">
           <div class="pcp-amount-goal">
-            {ts}Goal{/ts} <span class="goal-amount crmMoney">{$pcp.goal_amount|crmMoney}</span>
+            <h2>{ts}Goal{/ts} <span class="goal-amount crmMoney">{$pcp.goal_amount|crmMoney}</span></h2>
         </div>
-        <div class="thermometer-fill-wrapper">
-            <div style="height: {$achieved}%;" class="thermometer-fill">
-              <div class="thermometer-pointer"><span class="pcp-percent-raised">{$achieved}%</span> towards our goal</div>
-            </div><!-- /.thermometer-fill -->
-        </div><!-- /.thermometer-fill-wrapper -->
-        <div class="pcp-amount-raised">
-             <span class="raised-amount crmMoney">{$total|crmMoney}</span> {ts}raised{/ts}
-        </div>
+		<div class="thermometer-fill-wrapper progress">
+			<div style="width: {$achieved}%; min-width: 2em;"  aria-valuenow="{$achieved}" aria-valuemin="0" aria-valuemax="100" class="thermometer-fill progress-bar">
+			  <div class="thermometer-pointer"><span class="pcp-percent-raised">{$achieved|string_format:"%d"}%</span></div>
+			</div><!-- /.thermometer-fill -->
+		</div><!-- /.thermometer-fill-wrapper -->
+		<div class="pcp-amount-raised">
+			 <h4><span class="raised-amount crmMoney">{$total|crmMoney}</span> {ts}raised{/ts}</h4>
+		</div>
     </div>
       {/if}
+      <div class="pcp-intro-text">
+		  {$pcp.intro_text}
+	  </div>
       {if $pcp.is_honor_roll}
+      <div class="clearfix"></div>
+      <hr>
       <div class="honor-roll-wrapper">
-        <div class="honor-roll-title">{ts}HONOR ROLL{/ts}</div>
+        <div class="honor-roll-title"><h3>{ts}Honor Roll{/ts} <small>[<a href="#" onclick="roll_start_stop(); return false;" id="roll" title="Stop scrolling">{ts}Stop{/ts}</a>]</small></h3></div>
           <div class="honor_roll">
               <marquee behavior="scroll" direction="up" id="pcp_roll"  scrolldelay="200" bgcolor="#fafafa">
                 {foreach from = $honor item = v}
@@ -88,12 +91,9 @@
                     <div class="pcp-honor_roll-nickname">{$v.nickname}</div>
                     <div class="pcp-honor_roll-total_amount">{$v.total_amount}</div>
                     <div class="pcp-honor_roll-personal_note">{$v.personal_note}</div>
-          </div>
+				</div>
                 {/foreach}
               </marquee>
-          </div>
-          <div class="description">
-              [<a href="#" onclick="roll_start_stop(); return false;" id="roll" title="Stop scrolling">{ts}Stop{/ts}</a>]
           </div>
         </div>
      {/if}
@@ -101,25 +101,25 @@
      </div>
       {/if}
 
-
-    <div class="pcp-page-text">
+	<br>
+    <blockquote class="pcp-page-text">
       {$pcp.page_text}
-    </div>
+    </blockquote>
 
-    {if $validDate && $contributeURL}
-      <div class="pcp-donate">
-        {* Show link to PCP contribution if configured for online contribution *}
-            <a href={$contributeURL} class="button contribute-button pcp-contribute-button"><span>{$contributionText}</span></a>
-        </div>
-    {/if}
-
-
-
-   {if $linkText}
-   <div class="pcp-create-your-own">
-        <a href={$linkTextUrl} class="pcp-create-link"><span>{$linkText}</span></a>
-   </div>
-   {/if}
+	<div class="row text-center">
+	   {if $linkText}
+	   <div class="pcp-create-your-own col-xs-12 col-sm-6">
+			<a href={$linkTextUrl} class="pcp-create-link btn btn-primary"><span>{$linkText}</span></a>
+	   </div>
+	   {/if}
+	   {if $validDate && $contributeURL}
+		  <div class="pcp-donate col-xs-12 col-sm-6">
+			{* Show link to PCP contribution if configured for online contribution *}
+				<a href={$contributeURL} class="button contribute-button pcp-contribute-button btn btn-success"><span>{$contributionText}</span></a>
+			</div>
+		{/if}
+	  </div>
+   
 {/crmRegion}
 </div><!-- /.campaign -->
 

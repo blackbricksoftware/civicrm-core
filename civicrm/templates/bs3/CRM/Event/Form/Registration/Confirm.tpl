@@ -83,7 +83,7 @@
     {if $pcpBlock}
     <div class="crm-group pcp_display-group row">
         <div class="header-dark col-xs-12 col-sm-6">
-           {ts}Contribution Honor Roll{/ts}
+            <h3>{ts}Contribution Honor Roll{/ts}</h3>
         </div>
         <div class="display-block col-xs-12 col-sm-6">
             {if $pcp_display_in_roll}

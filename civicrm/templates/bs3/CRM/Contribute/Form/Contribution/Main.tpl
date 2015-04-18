@@ -137,7 +137,7 @@
 
   {if $form.is_recur}
   <div class="crm-section {$form.is_recur.name}-section form-group clearfix">
-    {* <div class="label col-xs-12 col-sm-4 col-md-3">&nbsp;</div> *}
+    {* <div class="label col-xs-12 col-sm-6">&nbsp;</div> *}
     <div class="content col-xs-12 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
       {$form.is_recur.html} {$form.is_recur.label} {ts}every{/ts}
       {if $is_recur_interval}
@@ -168,23 +168,23 @@
   {/if}
   {if $pcpSupporterText}
   <div class="crm-section pcpSupporterText-section form-group clearfix">
-    <div class="label col-xs-12 col-sm-4 col-md-3">&nbsp;</div>
-    <div class="content col-xs-12 col-sm-8 col-md-9">{$pcpSupporterText}</div>
+    <div class="label col-xs-12 col-sm-6">&nbsp;</div>
+    <div class="content col-xs-12 col-sm-6">{$pcpSupporterText}</div>
   </div>
   {/if}
   {assign var=n value=email-$bltID}
   <div class="crm-section {$form.$n.name}-section form-group clearfix">
-    <div class="label col-xs-12 col-sm-4 col-md-3">{$form.$n.label}</div>
-    <div class="content col-xs-12 col-sm-8 col-md-9">
-      {$form.$n.html}
+    <div class="label col-xs-12 col-sm-6">{$form.$n.label}</div>
+    <div class="content col-xs-12 col-sm-6">
+      {$form.$n.html|crmAddClass:'form-control'}
     </div>
     <div class="clear"></div>
   </div>
 
   {if $form.is_for_organization}
-  <div class="crm-section {$form.is_for_organization.name}-section form-group clearfix">
-    <div class="label col-xs-12 col-sm-4 col-md-3">&nbsp;</div>
-    <div class="content col-xs-12 col-sm-8 col-md-9">
+  <div class="crm-section {$form.is_for_organization.name}-section form-group row">
+    <div class="label col-xs-12 col-sm-6">&nbsp;</div>
+    <div class="content col-xs-12 col-sm-6">
       {$form.is_for_organization.html}&nbsp;{$form.is_for_organization.label}
     </div>
     <div class="clear"></div>
@@ -231,14 +231,14 @@
         <div class="clear"></div>
       </div>
       <div id="nickID" class="crm-section pcp_roll_nickname-section form-group clearfix">
-        <div class="label col-xs-12 col-sm-4 col-md-3">{$form.pcp_roll_nickname.label}</div>
-        <div class="content col-xs-12 col-sm-8 col-md-9">{$form.pcp_roll_nickname.html}
+        <div class="label col-xs-12 col-sm-6">{$form.pcp_roll_nickname.label}</div>
+        <div class="content col-xs-12 col-sm-6">{$form.pcp_roll_nickname.html}
           <div class="description">{ts}Enter the name you want listed with this contribution. You can use a nick name like 'The Jones Family' or 'Sarah and Sam'.{/ts}</div>
         </div>
       </div>
       <div id="personalNoteID" class="crm-section pcp_personal_note-section form-group clearfix">
-        <div class="label col-xs-12 col-sm-4 col-md-3">{$form.pcp_personal_note.label}</div>
-        <div class="content col-xs-12 col-sm-8 col-md-9">
+        <div class="label col-xs-12 col-sm-6">{$form.pcp_personal_note.label}</div>
+        <div class="content col-xs-12 col-sm-6">
           {$form.pcp_personal_note.html}
           <div class="description">{ts}Enter a message to accompany this contribution.{/ts}</div>
         </div>
@@ -252,8 +252,8 @@
   <fieldset class="crm-group payment_options-group" style="display:none;">
     <div class="panel panel-heading"><legend>{ts}Payment Options{/ts}</legend></div>
     <div class="crm-section payment_processor-section form-group clearfix">
-      <div class="label col-xs-12 col-sm-4 col-md-3">{$form.payment_processor.label}</div>
-      <div class="content col-xs-12 col-sm-8 col-md-9">{$form.payment_processor.html}</div>
+      <div class="label col-xs-12 col-sm-6">{$form.payment_processor.label}</div>
+      <div class="content col-xs-12 col-sm-6">{$form.payment_processor.html}</div>
     </div>
   </fieldset>
   {/if}
@@ -262,8 +262,8 @@
   <fieldset class="crm-group pay_later-group">
     <div class="panel panel-heading"><legend>{ts}Payment Options{/ts}</legend></div>
     <div class="crm-section pay_later_receipt-section form-group clearfix">
-      <div class="label col-xs-12 col-sm-4 col-md-3">&nbsp;</div>
-      <div class="content col-xs-12 col-sm-8 col-md-9">
+      <div class="label col-xs-12 col-sm-6">&nbsp;</div>
+      <div class="content col-xs-12 col-sm-6">
         [x] {$pay_later_text}
       </div>
     </div>
