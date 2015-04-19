@@ -79,6 +79,15 @@
       <div class="pcp-intro-text">
 		  {$pcp.intro_text}
 	  </div>
+	  <!--remove me-->
+	   {if $validDate && $contributeURL && $pcpteams_type_id EQ '1'}
+			<br>
+		  <div class="pcp-donate">
+			{* Show link to PCP contribution if configured for online contribution *}
+				<a href="{$contributeURL}" class="button contribute-button pcp-contribute-button btn btn-success" target="_blank"><span>Contribute Now</span></a>
+			</div>
+		{/if}
+		<!--end remove me-->
       {if $pcp.is_honor_roll}
       <div class="clearfix"></div>
       <hr>
@@ -106,16 +115,19 @@
       {$pcp.page_text}
     </blockquote>
 
-	<div class="row text-center">
+	<div class="clearfix text-center">
 	   {if $linkText}
-	   <div class="pcp-create-your-own col-xs-12 col-sm-6">
-			<a href={$linkTextUrl} class="pcp-create-link btn btn-primary"><span>{$linkText}</span></a>
+	   <div class="pcp-create-your-own">
+			<a href="{$linkTextUrl}" class="pcp-create-link btn btn-primary"><span>{$linkText}</span></a>
 	   </div>
 	   {/if}
-	   {if $validDate && $contributeURL}
-		  <div class="pcp-donate col-xs-12 col-sm-6">
+	   {if $validDate && $contributeURL && $pcpteams_type_id EQ '1'}
+		  <div class="pcp-donate">
 			{* Show link to PCP contribution if configured for online contribution *}
-				<a href={$contributeURL} class="button contribute-button pcp-contribute-button btn btn-success"><span>{$contributionText}</span></a>
+<!--
+				<a href="{$contributeURL}" class="button contribute-button pcp-contribute-button btn btn-success"><span>{$contributionText}</span></a>
+-->
+				<a href="{$contributeURL}" class="button contribute-button pcp-contribute-button btn btn-success" target="_blank"><span>Contribute Now</span></a>
 			</div>
 		{/if}
 	  </div>
