@@ -49,7 +49,7 @@
 
     {* moved to tpl since need to show only for primary participant page *}
     {if $requireApprovalMsg || $waitlistMsg}
-      <div id="id-waitlist-approval-msg" class="messages status no-popup">
+      <div id="id-waitlist-approval-msg" class="messages status no-popup alert alert-info">
         {if $requireApprovalMsg}
           <div id="id-req-approval-msg">{$requireApprovalMsg}</div>
         {/if}
@@ -57,6 +57,7 @@
           <div id="id-waitlist-msg">{$waitlistMsg}</div>
         {/if}
       </div>
+      <br>
     {/if}
 
     {if $contact_id}
