@@ -217,29 +217,29 @@
   {if $isHonor}
   <fieldset class="crm-group pcp-group">
     <div class="crm-section pcp-section">
-      <div class="crm-section display_in_roll-section">
-        <div class="content">
+      <div class="crm-section display_in_roll-section clearfix">
+        <div class="content  col-xs-12 col-sm-6 col-sm-offset-6">
           {$form.pcp_display_in_roll.html} &nbsp;
           {$form.pcp_display_in_roll.label}
         </div>
         <div class="clear"></div>
       </div>
-      <div id="nameID" class="crm-section is_anonymous-section">
-        <div class="content">
+      <div id="nameID" class="crm-section is_anonymous-section clearfix">
+        <div class="content col-xs-12 col-sm-6 col-sm-offset-6">
           {$form.pcp_is_anonymous.html}
         </div>
         <div class="clear"></div>
       </div>
       <div id="nickID" class="crm-section pcp_roll_nickname-section form-group clearfix">
         <div class="label col-xs-12 col-sm-6">{$form.pcp_roll_nickname.label}</div>
-        <div class="content col-xs-12 col-sm-6">{$form.pcp_roll_nickname.html}
+        <div class="content col-xs-12 col-sm-6">{$form.pcp_roll_nickname.html|crmAddClass:'form-control'}
           <div class="description">{ts}Enter the name you want listed with this contribution. You can use a nick name like 'The Jones Family' or 'Sarah and Sam'.{/ts}</div>
         </div>
       </div>
       <div id="personalNoteID" class="crm-section pcp_personal_note-section form-group clearfix">
         <div class="label col-xs-12 col-sm-6">{$form.pcp_personal_note.label}</div>
         <div class="content col-xs-12 col-sm-6">
-          {$form.pcp_personal_note.html}
+          {$form.pcp_personal_note.html|crmAddClass:'form-control'}
           <div class="description">{ts}Enter a message to accompany this contribution.{/ts}</div>
         </div>
       </div>
