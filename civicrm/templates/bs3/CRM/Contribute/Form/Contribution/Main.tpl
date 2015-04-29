@@ -250,7 +250,7 @@
   {if $form.payment_processor.label}
   {* PP selection only works with JS enabled, so we hide it initially *}
   <fieldset class="crm-group payment_options-group" style="display:none;">
-    <div class="panel panel-heading"><legend>{ts}Payment Options{/ts}</legend></div>
+    <legend>{ts}Payment Options{/ts}</legend>
     <div class="crm-section payment_processor-section form-group clearfix">
       <div class="label col-xs-12 col-sm-6">{$form.payment_processor.label}</div>
       <div class="content col-xs-12 col-sm-6">{$form.payment_processor.html}</div>
@@ -260,7 +260,7 @@
 
   {if $is_pay_later}
   <fieldset class="crm-group pay_later-group">
-    <div class="panel panel-heading"><legend>{ts}Payment Options{/ts}</legend></div>
+    <legend>{ts}Payment Options{/ts}</legend>
     <div class="crm-section pay_later_receipt-section form-group clearfix">
       <div class="label col-xs-12 col-sm-6">&nbsp;</div>
       <div class="content col-xs-12 col-sm-6">
@@ -285,7 +285,7 @@
   {if $is_monetary and $form.bank_account_number}
   <div id="payment_notice">
     <fieldset class="crm-group payment_notice-group">
-     <div class="panel panel-heading"> <legend>{ts}Agreement{/ts}</legend> </div>
+     <legend>{ts}Agreement{/ts}</legend>
       {ts}Your account data will be used to charge your bank account via direct debit. While submitting this form you agree to the charging of your bank account via direct debit.{/ts}
     </fieldset>
   </div>

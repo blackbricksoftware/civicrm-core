@@ -45,7 +45,7 @@
 
         {if $mode ne 8 && $action ne 1028 && $action ne 4}
         <fieldset class="col-sm-12 crm-profile crm-profile-id-{$field.group_id} crm-profile-name-{$field.groupName} form-group ">
-			<div class="panel-heading"><legend>{$field.groupTitle}</legend></div>
+			<legend>{$field.groupTitle}</legend>
         {/if}
 
         {if ($form.formName eq 'Confirm' OR $form.formName eq 'ThankYou') AND $prefix neq 'honor'}
@@ -67,9 +67,9 @@
       {elseif $n}
         {* Show explanatory text for field if not in 'view' or 'preview' modes *}
         {if $field.help_pre && $action neq 4 && $action neq 1028}
-          <div class="crm-section helprow-{$n}-section" id="helprow-{$n}">
+          <blockquote class="crm-section helprow-{$n}-section" id="helprow-{$n}">
             <div class="content description">{$field.help_pre}</div>
-          </div>
+          </blockquote>
         {/if}
         {if $field.options_per_line != 0}
           <div class="crm-section editrow_{$n}-section form-item clearfix" id="editrow-{$n}">
@@ -77,7 +77,7 @@
             <div class="content 3">
               {assign var="count" value="1"}
               {strip}
-                <table class="form-layout-compressed">
+                <table class="form-layout-compressed table table-striped">
                 <tr>
                 {* sort by fails for option per line. Added a variable to iterate through the element array*}
                   {assign var="index" value="1"}
@@ -103,7 +103,7 @@
           </div>
         {else}
           <div class="crm-section editrow_{$n}-section form-item form-group clearfix" id="editrow-{$n}">
-            <div class="col-xs-12 col-sm-6 label">
+            <div class="col-sm-6 label">
               {if $prefix}{$form.$prefix.$n.label}{else}{$form.$n.label}{/if}
             </div>
             <div class="col-sm-6 content">
@@ -127,7 +127,7 @@
               {elseif $n|substr:0:5 eq 'phone'}
                 {assign var="phone_ext_field" value=$n|replace:'phone':'phone_ext'}
                 {if $prefix}{$form.$prefix.$n.html}{else}{$form.$n.html}{/if}
-                {if $form.$phone_ext_field.html|crmAddClass:'form-control'}
+                {if $form.$phone_ext_field.html}
                   &nbsp;{$form.$phone_ext_field.html|crmAddClass:'form-control'}
                 {/if}
               {else}
@@ -146,9 +146,9 @@
         {/if}
         {* Show explanatory text for field if not in 'view' or 'preview' modes *}
         {if $field.help_post && $action neq 4 && $action neq 1028}
-          <div class="crm-section helprow-{$n}-section" id="helprow-{$n}">
+          <blockquote class="crm-section helprow-{$n}-section" id="helprow-{$n}">
             <div class="content description">{$field.help_post}</div>
-          </div>
+          </blockquote>
         {/if}
       {/if}
     {/foreach}

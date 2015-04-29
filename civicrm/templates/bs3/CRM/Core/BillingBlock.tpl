@@ -35,7 +35,6 @@
     <div id="payment_information" class="row">
 		<div class="col-xs-12 col-md-6">
 			<fieldset class="panel billing_mode-group {if $paymentProcessor.payment_type & 2}direct_debit_info-group{else}credit_card_info-group{/if}">
-				<div class="panel-heading">
 					<legend>
 					   {if $paymentProcessor.payment_type & 2}
 							{ts}Direct Debit Information{/ts}
@@ -43,7 +42,6 @@
 						   {ts}Credit Card Information{/ts}
 					   {/if}
 					</legend>
-					</div>
 					{if $paymentProcessor.billing_mode & 2 and !$hidePayPalExpress }
 					<div class="crm-section no-label paypal_button_info-section">
 					  <div class="content description">
@@ -106,12 +104,10 @@
 				</div>
 				<div class="col-xs-12 col-md-6">
 					<fieldset class="panel billing_name_address-group">
-					  <div class="panel panel-heading">
 						  <legend>{ts}Billing Name and Address{/ts}</legend>
 						  {if $profileAddressFields}
 						  <input type="checkbox" id="billingcheckbox" value="0"> <label for="billingcheckbox">{ts}My billing address is the same as above{/ts}</label>
 						  {/if}
-					  </div>
 						<div class="panel-body crm-section billing_name_address-section">
 							<div class="crm-section {$form.billing_first_name.name}-section form-group clearfix">
 								<div class="label col-sm-6">{$form.billing_first_name.label} {$reqMark}</div>

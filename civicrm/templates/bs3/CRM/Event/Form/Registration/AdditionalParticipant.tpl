@@ -41,7 +41,7 @@
     </div>
 {/if}
 
-<div class="row">
+<div class="clearfix">
 
 <div class="col-xs-6 col-sm-6">
 {include file="CRM/UF/Form/Block.tpl" fields=$additionalCustomPre}
@@ -62,7 +62,7 @@
     </fieldset>
 {else}
     {if $paidEvent}
-        <table class="form-layout-compressed">
+        <table class="form-layout-compressed table table-striped">
             <tr class="crm-event-additionalparticipant-form-block-amount">
                 <td class="label nowrap">{$event.fee_label} <span class="marker">*</span></td>
                 <td>&nbsp;</td>
@@ -72,10 +72,11 @@
     {/if}
 {/if}
 
-{include file="CRM/UF/Form/Block.tpl" fields=$additionalCustomPost}
+</div>
+</div>
 
-</div>
-</div>
+<div class="clearfix">
+	{include file="CRM/UF/Form/Block.tpl" fields=$additionalCustomPost}
 </div>
 
 <div id="crm-submit-buttons" class="col-xs-12 col-sm-6 form-group col-sm-offset-6 text-center">

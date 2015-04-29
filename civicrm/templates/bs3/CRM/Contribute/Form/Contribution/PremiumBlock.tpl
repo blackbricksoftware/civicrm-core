@@ -28,7 +28,7 @@
     {if $context EQ "makeContribution"}
       <fieldset class="panel panel-info crm-group premiums_select-group">
       {if $premiumBlock.premiums_intro_title}
-        <div class="panel-heading"><legend>{$premiumBlock.premiums_intro_title}</legend></div>
+        <legend>{$premiumBlock.premiums_intro_title}</legend>
       {/if}
       {if $premiumBlock.premiums_intro_text}
       <div class="panel-body">
