@@ -41,14 +41,7 @@
     {foreach from = $links key = k item = v}
           <tr>
             <td>
-<!--
-				bbshack
--->
-				{if $k eq '4'}
-					<input type="text" value="{crmURL p=$v.url q=$v.qs|replace:'%%pcpId%%':$replace.id|replace:'%%pageComponent%%':$replace.pageComponent|replace:'%%pcpBlock%%':$replace.block}" title="{$v.title}" {if $v.extra}{$v.extra}{/if} class="form-control" style="cursor: text;"  onclick="{literal}javascript:this.select();{/literal}" readonly>
-				{else}
-					<a href="{crmURL p=$v.url q=$v.qs|replace:'%%pcpId%%':$replace.id|replace:'%%pageComponent%%':$replace.pageComponent|replace:'%%pcpBlock%%':$replace.block}" title="{$v.title}" {if $v.extra}{$v.extra}{/if}><strong>&raquo; {$v.name}</strong></a>
-				{/if}
+				<a href="{crmURL p=$v.url q=$v.qs|replace:'%%pcpId%%':$replace.id|replace:'%%pageComponent%%':$replace.pageComponent|replace:'%%pcpBlock%%':$replace.block}" title="{$v.title}" {if $v.extra}{$v.extra}{/if}><strong>&raquo; {$v.name}</strong></a>
        </td>
          <td>&nbsp;<cite>{$hints.$k}</cite></td>
       </tr>
@@ -131,10 +124,7 @@
 	   {if $validDate && $contributeURL && $pcpteams_type_id EQ '1'}
 		  <div class="pcp-donate col-sm-6">
 			{* Show link to PCP contribution if configured for online contribution *}
-<!-- bbshack
 				<a href="{$contributeURL}" class="button contribute-button pcp-contribute-button btn btn-success"><span>{$contributionText}</span></a>
--->
-				<a href="{$contributeURL}" class="button contribute-button pcp-contribute-button btn btn-success" target="_blank"><span>Contribute Now</span></a>
 			</div>
 		{/if}
 	  </div>
