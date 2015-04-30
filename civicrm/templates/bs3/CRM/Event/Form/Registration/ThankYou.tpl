@@ -39,19 +39,23 @@
         </div>
     {/if}
 
-    {* Show link to Tell a Friend (CRM-2153) *}
-    {if $friendText}
-        <div id="tell-a-friend" class="crm-section tell_friend_link-section">
-            <a href="{$friendURL}" title="{$friendText}" class="button"><span>&raquo; {$friendText}</span></a>
-       </div><br /><br />
-    {/if}
+	<br>
+	<div class="clearfix">
+		{* Show link to Tell a Friend (CRM-2153) *}
+		{if $friendText }
+			<div id="tell-a-friend" class="crm-section tell_friend_link-section col-sm-6">
+				<a href="{$friendURL}" title="{$friendText}" class="button btn btn-success"><span>{$friendText}</span></a>
+		   </div>
+		{/if}
 
-    {* Add button for donor to create their own Personal Campaign page *}
-    {if $pcpLink}
-      <div class="crm-section create_pcp_link-section">
-            <a href="{$pcpLink}" title="{$pcpLinkText}" class="button"><span>&raquo; {$pcpLinkText}</span></a>
-        </div><br /><br />
-    {/if}
+		{* Add button for donor to create their own Personal Campaign page *}
+		{if $pcpLink}
+		  <div class="crm-section create_pcp_link-section col-sm-6">
+				<a href="{$pcpLink}" title="{$pcpLinkText}" class="button btn btn-primary"><span>{$pcpLinkText}</span></a>
+			</div>
+		{/if}
+    </div>
+    <br>
 
     <div id="help">
         {if $isOnWaitlist}

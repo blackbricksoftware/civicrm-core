@@ -120,7 +120,7 @@
     </blockquote>
 
 	<div class="clearfix text-center">
-	   {if $linkText}
+	   {if $linkText && false}
 	   <div class="pcp-create-your-own col-sm-6">
 			<a href="{$linkTextUrl}" class="pcp-create-link btn btn-primary"><span>{$linkText}</span></a>
 	   </div>

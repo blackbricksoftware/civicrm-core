@@ -25,7 +25,7 @@
 *}
 {* Handles display of passed $infoMessage. *}
 {if $infoMessage}
-  <div class="messages status {$infoType}"{if $infoOptions} data-options='{$infoOptions}'{/if}>
+  <div class="messages status alert alert-warning {$infoType}"{if $infoOptions} data-options='{$infoOptions}'{/if}>
     <div class="icon inform-icon"></div>
     <span class="msg-title">{$infoTitle}</span>
     <span class="msg-text">{$infoMessage}</span>
