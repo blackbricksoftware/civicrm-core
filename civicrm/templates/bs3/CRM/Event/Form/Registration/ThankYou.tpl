@@ -42,7 +42,7 @@
 	<br>
 	<div class="clearfix">
 		{* Show link to Tell a Friend (CRM-2153) *}
-		{if $friendText }
+		{if $friendText and false}
 			<div id="tell-a-friend" class="crm-section tell_friend_link-section col-sm-6">
 				<a href="{$friendURL}" title="{$friendText}" class="button btn btn-success"><span>{$friendText}</span></a>
 		   </div>
