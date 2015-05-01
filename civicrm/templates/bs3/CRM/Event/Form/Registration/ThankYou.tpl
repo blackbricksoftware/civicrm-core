@@ -40,6 +40,8 @@
     {/if}
 
 	<br>
+	<blockquote><h3>Start fundraising now! <a href="{$pcpLink}" title="{$pcpLinkText}" class="button btn btn-primary"><span>{$pcpLinkText}</span></a></h3></blockquote>
+<!--
 	<div class="clearfix">
 		{* Show link to Tell a Friend (CRM-2153) *}
 		{if $friendText and false}
@@ -56,6 +58,7 @@
 		{/if}
     </div>
     <br>
+-->
 
     <div id="help">
         {if $isOnWaitlist}

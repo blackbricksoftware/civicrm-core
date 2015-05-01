@@ -34,34 +34,38 @@
    {ts 1=$loginURL}If you already have an account <a href='%1'>please login</a> before completing this form.{/ts}
       </div>
       <div>{$form.cms_create_account.html} {$form.cms_create_account.label}</div>
+      <br>
       <div id="details" class="crm_user_signup-section">
 
          <div class="form-layout-compressed">
-           <div class="crm-section cms_name-section">
-             <div class="label">
+           <div class="crm-section cms_name-section clearfix">
+             <div class="col-sm-6  label">
                <label for="cms_name">{$form.cms_name.label}</label>
              </div>
-             <div class="content">
-               {$form.cms_name.html} <a id="checkavailability" href="#" onClick="return false;">{ts}<strong>Check Availability</strong>{/ts}</a>
+             <div class="col-sm-6  content">
+               {$form.cms_name.html|crmAddClass:'form-control'} 
+               <br>
+               <a id="checkavailability" href="#" onClick="return false;">{ts}<strong>Check Availability</strong>{/ts}</a>
                <span id="msgbox" style="display:none"></span><br />
                <span class="description">{ts}Punctuation is not allowed in a Username with the exception of periods, hyphens and underscores.{/ts}</span>
              </div>
            </div>
 
            {if $form.cms_pass}
-           <div class="crm-section cms_pass-section">
-             <div class="label">
+           <div class="crm-section cms_pass-section clearfix">
+             <div class="col-sm-6  label">
                <label for="cms_pass">{$form.cms_pass.label}</label>
              </div>
-             <div class="content">
-               {$form.cms_pass.html}
+             <div class="col-sm-6  content">
+               {$form.cms_pass.html|crmAddClass:'form-control'}
              </div>
-             <div class="clear"></div>
-             <div class="label">
+          </div>
+          <div class="crm-section cms_pass-section clearfix">
+             <div class="col-sm-6  label">
                <label for="crm_confirm_pass-section">{$form.cms_confirm_pass.label}</label>
              </div>
-             <div class="content">
-               {$form.cms_confirm_pass.html}<br/>
+             <div class=col-sm-6  "content">
+               {$form.cms_confirm_pass.html|crmAddClass:'form-control'}<br/>
                <span class="description">{ts}Provide a password for the new account in both fields.{/ts}</span>
              </div>
            </div>

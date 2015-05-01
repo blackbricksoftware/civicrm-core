@@ -28,6 +28,7 @@
 </div>
 <hr>
 <fieldset class="crm-pcp-campaign-group">
+	<blockquote><h3>If you are a team captain please create your team page first. Once the team page is complete, visit <a href="https://rapidquest.org/pcp">https://rapidquest.org/pcp</a> to complete your personal page. You will be able to manage both pages with the same login.</he></blockquote>
 <div class="crm-block crm-contribution-campaign-form-block">
 {crmRegion name="pcp-form-campaign"}
   <div class="crm-section crm-pcp-title-section crm-contribution-form-block-title clearfix">
@@ -48,12 +49,12 @@
   <div class="crm-section crm-pcp-goal_amount-section crm-contribution-form-block-goal_amount clearfix">
     <div class="label col-xs-12 col-sm-6"><h3>{$form.goal_amount.label}</h3></div>
     <div class="content col-xs-12 col-sm-6">
-      {$form.goal_amount.html|crmAddClass:six|crmAddClass:'form-control'}
+      {$form.goal_amount.html|crmAddClass:'form-control'|crmInsert:"value":"1250"}
       <div class="description">{ts}Total amount you would like to raise for this campaign.{/ts}</div>
     </div>
     <div class="clear"></div>
   </div>
-  <div class="crm-section crm-pcp-is_thermometer-section crm-contribution-form-block-is_thermometer clearfix">
+  <div class="crm-section crm-pcp-is_thermometer-section crm-contribution-form-block-is_thermometer clearfix hide">
     <div class="label col-xs-12 col-sm-6"><h3>{$form.is_thermometer.label}</h3></div>
     <div class="content col-xs-12 col-sm-6 checkbox">
       {$form.is_thermometer.html}
@@ -61,7 +62,7 @@
     </div>
     <div class="clear"></div>
   </div>
-  <div class="crm-section crm-pcp-donate_link_text-section crm-contribution-form-block-donate_link_text clearfix">
+  <div class="crm-section crm-pcp-donate_link_text-section crm-contribution-form-block-donate_link_text clearfix hide">
     <div class="label col-xs-12 col-sm-6"><h3>{$form.donate_link_text.label}</h3></div>
     <div class="content col-xs-12 col-sm-6">
       {$form.donate_link_text.html|crmAddClass:'form-control'}
@@ -72,13 +73,13 @@
   <div class="crm-section crm-pcp-page_text-section crm-contribution-form-block-page_text clearfix">
     <div class="label col-xs-12 col-sm-6"><h3>{$form.page_text.label}</h3></div>
     <div class="content col-xs-12 col-sm-6">
-      {$form.page_text.html|crmAddClass:huge|crmAddClass:'form-control'}
+      {$form.page_text.html|crmAddClass:'form-control'}
       <div class="description">{ts}Tell people why this campaign is important to you.{/ts}</div>
     </div>
     <div class="clear"></div>
   </div>
   {include file="CRM/Form/attachment.tpl" context="pcpCampaign"}
-  <div class="crm-section crm-pcp-is_honor_roll-section crm-contribution-form-block-is_honor_roll clearfix">
+  <div class="crm-section crm-pcp-is_honor_roll-section crm-contribution-form-block-is_honor_roll clearfix hide">
     <div class="label col-xs-12 col-sm-6"><h3>{$form.is_honor_roll.label}</h3></div>
     <div class="content col-xs-12 col-sm-6 checkbox">
       {$form.is_honor_roll.html}
@@ -98,7 +99,19 @@
 </div>
 <div class="crm-submit-buttons col-xs-12 col-sm-4 form-group col-sm-offset-8 text-center">{include file="CRM/common/formButtons.tpl" location="bottom"}</div>
 </fieldset>
-<script type="text/javascript">
-    // Always open attachment div by default for this form
-    cj('#attachments').show();
-</script>
+<script type="text/javascript">{literal}
+	cj(function(){
+		// Always open attachment div by default for this form
+		cj('#attachments').show();
+		var goal_amount = function(){
+			var val = cj('#goal_amount').val();
+			val.replace(/[^\d\.]+/gi,'');
+			if (!val.match(/\d/)) val = 0;
+			val = parseFloat(val);
+			if (isNaN(val)||val<1250) val = 1250;
+			cj('#goal_amount').val(val.toFixed(2));
+		};
+		goal_amount();
+		cj('#goal_amount').change(goal_amount);
+	});
+{/literal}</script>
