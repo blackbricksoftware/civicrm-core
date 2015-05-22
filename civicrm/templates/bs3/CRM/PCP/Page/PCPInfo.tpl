@@ -65,7 +65,7 @@
      {/if}
      {if $pcp.is_thermometer OR $pcp.is_honor_roll}
       <div class="pcp-widgets">
-      {if $pcp.is_thermometer}
+      {if $pcp.is_thermometer  && $pcpteams_type_id EQ '1'}
       <div class="thermometer-wrapper">
           <div class="pcp-amount-goal">
             <h2>{ts}Goal{/ts} <span class="goal-amount crmMoney">{$pcp.goal_amount|crmMoney}</span></h2>
@@ -115,7 +115,7 @@
       {/if}
 
 	<br>
-    <blockquote class="pcp-page-text">
+    <blockquote class="pcp-page-text hide">
       {$pcp.page_text}
     </blockquote>
 

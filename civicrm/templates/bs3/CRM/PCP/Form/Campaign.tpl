@@ -70,7 +70,7 @@
     </div>
     <div class="clear"></div>
   </div>
-  <div class="crm-section crm-pcp-page_text-section crm-contribution-form-block-page_text clearfix">
+  <div class="crm-section crm-pcp-page_text-section crm-contribution-form-block-page_text clearfix hide">
     <div class="label col-xs-12 col-sm-6"><h3>{$form.page_text.label}</h3></div>
     <div class="content col-xs-12 col-sm-6">
       {$form.page_text.html|crmAddClass:'form-control'}
@@ -103,15 +103,28 @@
 	cj(function(){
 		// Always open attachment div by default for this form
 		cj('#attachments').show();
+			
+		// set and or hide minimum goal amount
 		var goal_amount = function(){
-			var val = cj('#goal_amount').val();
-			val.replace(/[^\d\.]+/gi,'');
-			if (!val.match(/\d/)) val = 0;
-			val = parseFloat(val);
-			if (isNaN(val)||val<1250) val = 1250;
-			cj('#goal_amount').val(val.toFixed(2));
+			// hide goad amount
+			if (cj('input[name="pcp_team_type"]:checked').val() == 1) {
+				cj('.crm-pcp-goal_amount-section').slideDown('slow');
+				// set goal amount
+				var val = cj('#goal_amount').val();
+				val.replace(/[^\d\.]+/gi,'');
+				if (!val.match(/\d/)) val = 0;
+				val = parseFloat(val);
+				if (isNaN(val)||val<1250) {
+					alert('Minimum goal is $1250');
+					val = 1250;
+				}
+				cj('#goal_amount').val(val.toFixed(2));
+			} else {
+				cj('.crm-pcp-goal_amount-section').slideUp();
+			}
 		};
 		goal_amount();
-		cj('#goal_amount').change(goal_amount);
+		cj('#goal_amount, input[name="pcp_team_type"]').change(goal_amount);
+
 	});
 {/literal}</script>
