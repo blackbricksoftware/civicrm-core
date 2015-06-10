@@ -111,10 +111,10 @@
 				cj('.crm-pcp-goal_amount-section').slideDown('slow');
 				// set goal amount
 				var val = cj('#goal_amount').val();
-				val.replace(/[^\d\.]+/gi,'');
-				if (!val.match(/\d/)) val = 0;
-				val = parseFloat(val);
-				if (isNaN(val)||val<1250) {
+				val = val.replace(/[^\d\.]/g,''); //console.log(val);
+				if (!val.match(/\d/)) val = 0; //console.log(val);
+				val = parseFloat(val); //console.log(val);
+				if (isNaN(val)||val<1250) { //console.log(val);
 					alert('Minimum goal is $1250');
 					val = 1250;
 				}
