@@ -77,7 +77,7 @@
   <tr class="crm-contribution-form-block-is_active">
     <td class="label">{$form.is_active.label}</td>
     <td>{$form.is_active.html}
-            <span class="description">{ts}Is your Personal Campaign Page active? You can activate/de-activate it any time during it's lifecycle.{/ts}</span></td>
+            <span class="description">{ts}Is your Campaign Page active? You can activate/de-activate it any time during it's lifecycle.{/ts}</span></td>
   </tr>
 </table>
 </div>

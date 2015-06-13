@@ -68,8 +68,8 @@
             <li><a title="{ts}Tell a Friend{/ts}"
                    href="{crmURL p='civicrm/event/manage/friend' q="reset=1&action=update&id=`$event.id`"}">{ts}Tell a Friend{/ts}</a>
             </li>
-            <li><a title="{ts}Personal Campaign Pages{/ts}"
-                   href="{crmURL p='civicrm/event/manage/pcp' q="reset=1&action=update&id=`$event.id`"}">{ts}Personal Campaign Pages{/ts}</a>
+            <li><a title="{ts}Campaign Pages{/ts}"
+                   href="{crmURL p='civicrm/event/manage/pcp' q="reset=1&action=update&id=`$event.id`"}">{ts}Campaign Pages{/ts}</a>
             </li>
           </ul>
         </div>

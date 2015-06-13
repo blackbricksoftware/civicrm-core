@@ -42,7 +42,7 @@
             <a href="{$friendURL}" title="{$friendText}" class="button"><span>&raquo; {$friendText}</span></a>
        </div>{if !$linkText}<br /><br />{/if}
     {/if}
-    {* Add button for donor to create their own Personal Campaign page *}
+    {* Add button for donor to create their own Campaign page *}
     {if $linkText}
    <div class="crm-section create_pcp_link-section">
         <a href="{$linkTextUrl}" title="{$linkText}" class="button"><span>&raquo; {$linkText}</span></a>

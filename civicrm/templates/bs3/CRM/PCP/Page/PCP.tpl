@@ -24,7 +24,7 @@
  +--------------------------------------------------------------------+
 *}
 <div id="help">
-{ts}This screen shows all the Personal Campaign Pages created in the system and allows administrator to review them and change their status.{/ts} {help id="id-pcp-intro"}
+{ts}This screen shows all the Campaign Pages created in the system and allows administrator to review them and change their status.{/ts} {help id="id-pcp-intro"}
 </div>
 {if $action ne 8}
 {include file="CRM/PCP/Form/PCP/PCP.tpl"}
@@ -56,7 +56,7 @@
   <tbody>
   {foreach from=$rows item=row}
   <tr id="row_{$row.id}" class="{$row.class}">
-          <td><a href="{crmURL p='civicrm/pcp/info' q="reset=1&id=`$row.id` " fe='true'}" title="{ts}View Personal Campaign Page{/ts}" target="_blank">{$row.title}</a></td>
+          <td><a href="{crmURL p='civicrm/pcp/info' q="reset=1&id=`$row.id` " fe='true'}" title="{ts}View Campaign Page{/ts}" target="_blank">{$row.title}</a></td>
     <td><a href="{crmURL p='civicrm/contact/view' q="reset=1&cid=`$row.supporter_id`"}" title="{ts}View contact record{/ts}">{$row.supporter}</a></td>
     <td><a href="{$row.page_url}" title="{ts}View page{/ts}" target="_blank">{$row.page_title}</td>
     <td>{$row.start_date|crmDate:"%b %d, %Y %l:%M %P"}</td>
@@ -75,9 +75,9 @@
 <div class="messages status no-popup">
 <div class="icon inform-icon"></div>
     {if $isSearch}
-        {ts}There are no Personal Campaign Pages which match your search criteria.{/ts}
+        {ts}There are no Campaign Pages which match your search criteria.{/ts}
     {else}
-        {ts}There are currently no Personal Campaign Pages.{/ts}
+        {ts}There are currently no Campaign Pages.{/ts}
     {/if}
 </div>
 {/if}

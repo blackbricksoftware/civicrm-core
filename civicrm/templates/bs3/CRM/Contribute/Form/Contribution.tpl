@@ -240,7 +240,7 @@
     {if $siteHasPCPs}
       <div class="crm-accordion-wrapper crm-accordion_title-accordion crm-accordion-processed {if $noPCP}collapsed{/if}" id="softCredit">
         <div class="crm-accordion-header">
-          {ts}Personal Campaign Page{/ts}&nbsp;{help id="id-pcp"}
+          {ts}Campaign Page{/ts}&nbsp;{help id="id-pcp"}
         </div>
         <div class="crm-accordion-body">
           <table class="form-layout-compressed">
@@ -248,7 +248,7 @@
               <td class="label">{$form.pcp_made_through_id.label}</td>
               <td>
                 {$form.pcp_made_through_id.html} &nbsp;
-                <span class="description">{ts}Search for the Personal Campaign Page by the fund-raiser's last name or
+                <span class="description">{ts}Search for the Campaign Page by the fund-raiser's last name or
                  email address.{/ts}</span>
 
                 <div class="spacer"></div>
