@@ -107,7 +107,7 @@
 		// set and or hide minimum goal amount
 		var goal_amount = function(){
 			// hide goad amount
-			if (cj('input[name="pcp_team_type"]:checked').val() == 1) {
+			if (cj('input[type="radio"][name="pcp_team_type"]:checked').val() == 1 || cj('input[type="hidden"][name="pcp_team_type"]').val() == 1 ) {
 				cj('.crm-pcp-goal_amount-section').slideDown('slow');
 				// set goal amount
 				var val = cj('#goal_amount').val();
