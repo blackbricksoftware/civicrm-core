@@ -50,7 +50,7 @@
 		   </div>
 		{/if}
 
-		{* Add button for donor to create their own Personal Campaign page *}
+		{* Add button for donor to create their own Campaign page *}
 		{if $pcpLink}
 		  <div class="crm-section create_pcp_link-section col-sm-6">
 				<a href="{$pcpLink}" title="{$pcpLinkText}" class="button btn btn-primary"><span>{$pcpLinkText}</span></a>

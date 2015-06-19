@@ -40,7 +40,7 @@
 
   {foreach from=$pcpInfo item=row}
   <tr class="{cycle values="odd-row,even-row"} {$row.class}">
-        <td class="bold"><a href="{crmURL p='civicrm/pcp/info' q="reset=1&id=`$row.pcpId`" a=1}" title="{ts}Preview your Personal Campaign Page{/ts}">{$row.pcpTitle}</a></td>
+        <td class="bold"><a href="{crmURL p='civicrm/pcp/info' q="reset=1&id=`$row.pcpId`" a=1}" title="{ts}Preview your Campaign Page{/ts}">{$row.pcpTitle}</a></td>
         <td>{$row.pageTitle}</td>
         <td>{if $row.end_date}{$row.end_date|truncate:10:''|crmDate}{else}({ts}ongoing{/ts}){/if}</td>
         <td>{$row.pcpStatus}</td>
@@ -53,7 +53,7 @@
 {else}
 <div class="messages status no-popup">
   <div class="icon inform-icon"></div>
-  {ts}You do not have any active Personal Campaign pages.{/ts}
+  {ts}You do not have any active Campaign pages.{/ts}
 </div>
 {/if}
 
@@ -63,10 +63,10 @@
 {if $pcpInfo} {* Change layout and text if they already have a PCP. *}
     <br />
     <div class="float-right" style="width: 65%">
-    <div>{ts}Create a Personal Campaign Page for another campaign:{/ts}</div>
+    <div>{ts}Create a Campaign Page for another campaign:{/ts}</div>
 {else}
     <div style="width: 65%">
-    <div class="label">{ts}Become a supporter by creating a Personal Campaign Page:{/ts}</div>
+    <div class="label">{ts}Become a supporter by creating a Campaign Page:{/ts}</div>
 {/if}
 <table class="selector">
   <tr class="columnheader">

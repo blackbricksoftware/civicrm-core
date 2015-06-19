@@ -27,7 +27,7 @@
 {if $owner}
 <div class="messages status no-popup">
   <div class="icon inform-icon"></div>
-  <p><strong>{ts}Personal Campaign Preview{/ts}</strong> - {ts}This is a preview of your Personal Campaign Page in support of{/ts} <a href="{$parentURL}"><strong>{$pageName}</strong></a>.</p>
+  <p><strong>{ts}Campaign Preview{/ts}</strong> - {ts}This is a preview of your Campaign Page in support of{/ts} <a href="{$parentURL}"><strong>{$pageName}</strong></a>.</p>
         {ts}The current status of your page is{/ts}: <strong {if $pcp.status_id NEQ 2}class=disabled {/if}>{$owner.status}</strong>.
         {if $pcp.status_id NEQ 2}<br /><span class="description">{ts}You will receive an email notification when your page is Approved and you can begin promoting your campaign.{/ts}</span>{/if}
         {if $pcp.page_type EQ 'event'}

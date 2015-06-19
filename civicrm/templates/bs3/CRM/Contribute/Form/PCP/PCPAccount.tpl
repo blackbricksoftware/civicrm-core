@@ -23,7 +23,7 @@
  | see the CiviCRM license FAQ at http://civicrm.org/licensing        |
  +--------------------------------------------------------------------+
 *}
-{* Displays account creation and supporter profile form (step 1 in creating a personal campaign page as well as Update Contact info). *}
+{* Displays account creation and supporter profile form (step 1 in creating a campaign page as well as Update Contact info). *}
 {if $action EQ 1}
 <div id="help">
         {ts}Creating your own fundraising page is simple. Fill in some basic information below, which will allow you to manage your page and invite friends to make a contribution. Then click 'Continue' to personalize and announce your page.{/ts}

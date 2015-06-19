@@ -23,7 +23,7 @@
  | see the CiviCRM license FAQ at http://civicrm.org/licensing        |
  +--------------------------------------------------------------------+
 *}
-{* Displays account creation and supporter profile form (step 1 in creating a personal campaign page as well as Update Contact info). *}
+{* Displays account creation and supporter profile form (step 1 in creating a campaign page as well as Update Contact info). *}
 {if $action EQ 1}
 <div id="help">
     {if $pcpComponent EQ 'event'}

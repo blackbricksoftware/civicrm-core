@@ -241,14 +241,14 @@
 {if $pcp_id}
   <div id='PCPView' class="crm-accordion-wrapper ">
     <div class="crm-accordion-header">
-      {ts}Personal Campaign Page Contribution Information{/ts}
+      {ts}Campaign Page Contribution Information{/ts}
     </div>
     <div class="crm-accordion-body">
       <table class="crm-info-panel">
         <tr>
-          <td class="label">{ts}Personal Campaign Page{/ts}</td>
+          <td class="label">{ts}Campaign Page{/ts}</td>
           <td><a href="{crmURL p="civicrm/pcp/info" q="reset=1&id=`$pcp_id`"}">{$pcp_title}</a><br/>
-            <span class="description">{ts}Contribution was made through this personal campaign page.{/ts}</span>
+            <span class="description">{ts}Contribution was made through this campaign page.{/ts}</span>
           </td>
         </tr>
         <tr>

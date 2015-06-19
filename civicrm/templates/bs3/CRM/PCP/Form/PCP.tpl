@@ -86,7 +86,7 @@
               {ts}You can also place additional links (or menu items) allowing constituents to create their own fundraising pages using the following URL:{/ts}<br />
               <em>{crmURL a=1 fe=1 p='civicrm/contribute/campaign' q="action=add&reset=1&pageId=`$pageId`&component=`$context`"}</em>
             {elseif $config->userFramework EQ 'Joomla'}
-              {ts}You can also create front-end links (or menu items) allowing constituents to create their own fundraising pages using the Menu Manager. Select <strong>Contributions &raquo; Personal Campaign Pages</strong> and then select this event.{/ts}
+              {ts}You can also create front-end links (or menu items) allowing constituents to create their own fundraising pages using the Menu Manager. Select <strong>Contributions &raquo; Campaign Pages</strong> and then select this event.{/ts}
             {/if}
           </span>
         </td>
