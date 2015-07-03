@@ -65,8 +65,8 @@
      {/if}
      {if $pcp.is_thermometer OR $pcp.is_honor_roll}
       <div class="pcp-widgets">
-      {if $pcp.is_thermometer  && $pcpteams_type_id EQ '1'}
       <div class="thermometer-wrapper">
+		  {if $pcp.is_thermometer  && $pcpteams_type_id EQ '1'}
           <div class="pcp-amount-goal">
             <h2>{ts}Goal{/ts} <span class="goal-amount crmMoney">{$pcp.goal_amount|crmMoney}</span></h2>
         </div>
@@ -75,11 +75,11 @@
 			  <div class="thermometer-pointer"><span class="pcp-percent-raised">{$achieved|string_format:"%d"}%</span></div>
 			</div><!-- /.thermometer-fill -->
 		</div><!-- /.thermometer-fill-wrapper -->
+		{/if}
 		<div class="pcp-amount-raised">
 			 <h4><span class="raised-amount crmMoney">{$total|crmMoney}</span> {ts}raised{/ts}</h4>
 		</div>
     </div>
-      {/if}
       <div class="pcp-intro-text">
 		  {$pcp.intro_text}
 	  </div>
@@ -92,7 +92,7 @@
 			</div>
 		{/if}
 		<!--end remove me-->
-      {if $pcp.is_honor_roll}
+      {if $pcp.is_honor_roll && $pcpteams_type_id EQ '1'}
       <div class="clearfix"></div>
       <hr>
       <div class="honor-roll-wrapper">
