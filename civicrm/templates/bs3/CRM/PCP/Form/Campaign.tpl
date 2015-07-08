@@ -125,6 +125,20 @@
 		};
 		goal_amount();
 		cj('#goal_amount, input[name="pcp_team_type"]').change(goal_amount);
-
+		
+		var default_pcp_intro_text = function(){
+			var currentText = cj('#pcp_intro_text').val();
+			if (cj.trim(currentText).length>0) return;
+			var defaultText = 'Thank you for your support on my important Quest!\n\n'+
+			'Your contribution is helping provide life-changing, and life-saving, support for some of the most vulnerable members of our shared community at the Center.  Check it out:\n\n'+
+			'$10 = a full day of meals for a homeless youth\n'+
+			'$25 = access to a month’s worth of support groups for a senior\n'+
+			'$50 = a full day of services (meals, shower, laundry, employment training, etc.) for one young person at our youth center\n'+
+			'$100 = comprehensive HIV/STD testing and counseling for one client\n\n'+
+			'And, thanks to Wells Fargo, every dollar you give will go directly to the youth and senior services at the Center. As demand for the Center’s services grows, your support is more crucial than ever. What will make my Quest and the Center a success is one thing: you!';
+			cj('#pcp_intro_text').val(defaultText)
+		};
+		default_pcp_intro_text();
+		cj('#pcp_intro_text').change(default_pcp_intro_text);
 	});
 {/literal}</script>

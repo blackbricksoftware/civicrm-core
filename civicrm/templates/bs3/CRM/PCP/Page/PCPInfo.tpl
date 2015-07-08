@@ -98,7 +98,7 @@
       <div class="honor-roll-wrapper">
         <div class="honor-roll-title"><h3>{ts}Honor Roll{/ts} <small>[<a href="#" onclick="roll_start_stop(); return false;" id="roll" title="Stop scrolling">{ts}Stop{/ts}</a>]</small></h3></div>
           <div class="honor_roll">
-              <marquee behavior="scroll" direction="up" id="pcp_roll"  scrolldelay="200" bgcolor="#000" style="background: #000; height: 250px;">
+              <marquee behavior="scroll" direction="up" id="pcp_roll" scrolldelay="200" bgcolor="#000">
                 {foreach from = $honor item = v}
                 <div class="pcp_honor_roll_entry">
                     <div class="pcp-honor_roll-nickname">{$v.nickname}</div>
