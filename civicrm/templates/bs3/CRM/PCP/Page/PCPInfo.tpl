@@ -119,14 +119,14 @@
       {$pcp.page_text}
     </blockquote>
 
-	<div class="clearfix text-center">
+	<div class="clearfix">
 	   {if $linkText && false}
-	   <div class="pcp-create-your-own col-sm-6">
+	   <div class="pcp-create-your-own">
 			<a href="{$linkTextUrl}" class="pcp-create-link btn btn-primary"><span>{$linkText}</span></a>
 	   </div>
 	   {/if}
 	   {if $validDate && $contributeURL && $pcpteams_type_id EQ '1'}
-		  <div class="pcp-donate col-sm-6">
+		  <div class="pcp-donate">
 			{* Show link to PCP contribution if configured for online contribution *}
 				<a href="{$contributeURL}" class="button contribute-button pcp-contribute-button btn btn-success" target="_blank"><span>Contribute Now</span></a>
 			</div>
