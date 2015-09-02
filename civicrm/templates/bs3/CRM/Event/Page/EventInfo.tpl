@@ -114,49 +114,25 @@
   
       {* Only show end time if end date = start date *}
     {if $event.event_end_date|date_format:"%Y%m%d" == $event.event_start_date|date_format:"%Y%m%d"}  
-    
         <div class="crmevedate">
             <div class="crmevestartdate" title="{$event.event_start_date|crmDate}">
-            {$event.event_start_date|date_format:"%A," }&nbsp;{$event.event_start_date|crmDate:"%B %E"}</div>
-            
-                
-                    <div class="crmevetime" >
-                        {if $event.event_start_date} {$event.event_start_date|crmDate:0:1} {/if} 
-                        {if $event.event_end_date} {ts}-{/ts} {$event.event_end_date|crmDate:0:1} {/if}
-                    </div>
-                
-           
+				{$event.event_start_date|date_format:"%A," }&nbsp;{$event.event_start_date|crmDate:"%B %E"}
+            </div>             
+			<div class="crmevetime" >
+				{if $event.event_start_date} {$event.event_start_date|crmDate:0:1} {/if} 
+				{if $event.event_end_date} {ts}-{/ts} {$event.event_end_date|crmDate:0:1} {/if}
+			</div>
         </div>
-        
 	{else} 
-	
-        <div class="content crmevedate">
+        <div class="crmevedate">
             <div class="crmevestartdate" title="{$event.event_start_date|crmDate}">
-            {$event.event_start_date|date_format:"%A," }&nbsp;{$event.event_start_date|crmDate:"%B %E"}</div>
-            
-               
-                    <div class="crmevetime" >
-                        {if $event.event_start_date} {$event.event_start_date|crmDate:0:1} {/if} 
-                      
-                    </div>
-                
-           
-        </div>		
-        
-	       <div class="crmevethrough" >{ts}&nbsp;&nbsp;-&nbsp;&nbsp;{/ts}</div>
-        
-           <div class="content crmevedate">
-	            <div class="crmevestartdate" title="{$event.event_end_date|crmDate}">
-	                {$event.event_end_date|date_format:"%A," }&nbsp;{$event.event_end_date|crmDate:"%B %E"}</div>
-            
-		            {if $event.event_end_date}
-		                <br/>                 
-		                    <div class="crmevetime" title="{$event.event_end_date|crmDate:0:1}">
-		                        {$event.event_end_date|crmDate:0:1}
-		                    </div>
-		                
-		            {/if}
-            </div>
+				{$event.event_start_date|date_format:"%A," }&nbsp;{$event.event_start_date|crmDate:"%B %E"}
+				{if $event.event_end_date}
+					{ts}-{/ts}
+					{$event.event_end_date|date_format:"%A," }&nbsp;{$event.event_end_date|crmDate:"%B %E"}
+				{/if}
+			</div>
+		</div>
      {/if}
             
     <div class="clear"></div>
