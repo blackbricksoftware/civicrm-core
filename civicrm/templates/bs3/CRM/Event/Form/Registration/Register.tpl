@@ -23,6 +23,7 @@
  | see the CiviCRM license FAQ at http://civicrm.org/licensing        |
  +--------------------------------------------------------------------+
 *}
+<div class="col-xs-12">
 {* Callback snippet: Load payment processor *}
 {if $snippet}
   {include file="CRM/Core/BillingBlock.tpl" context="front-end"}
@@ -365,3 +366,4 @@
 
 </script>
 {/literal}
+</div>
