@@ -1,13 +1,11 @@
 #crm-container {
 	
 	/* at minimum scroll responsive */
-/*
 	width: 100%;
-	margin-bottom: 18px;
-	overflow-x: auto;
-	overflow-y: hidden;
-	min-height: 0.01%;
-*/
+	#crm-content {
+		width: 100%;
+		table-layout: fixed;
+	}
 
 	legend {
 		margin-bottom: 0;
@@ -190,6 +188,15 @@
 		img {
 			width:100%;
 		}
+	}
+	
+	/* responsive data table wrapers */
+	.dataTables_wrapper {
+		width: 100%;
+		margin-bottom: 18px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		min-height: 0.01%;
 	}
 }
 
