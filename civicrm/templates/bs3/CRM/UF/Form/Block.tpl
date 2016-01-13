@@ -44,8 +44,9 @@
         {/if}
 
         {if $mode ne 8 && $action ne 1028 && $action ne 4}
-        <fieldset class="col-sm-12 crm-profile crm-profile-id-{$field.group_id} crm-profile-name-{$field.groupName} form-group ">
+        <fieldset class="panel crm-profile crm-profile-id-{$field.group_id} crm-profile-name-{$field.groupName} form-group ">
 			<legend>{$field.groupTitle}</legend>
+			<div class="panel-body">
         {/if}
 
         {if ($form.formName eq 'Confirm' OR $form.formName eq 'ThankYou') AND $prefix neq 'honor'}
@@ -164,6 +165,7 @@
     {/if}
 
     {if $mode ne 8 && $action neq 1028}
+    </div>
     </fieldset>
     {/if}
 

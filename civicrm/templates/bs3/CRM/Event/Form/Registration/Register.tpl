@@ -83,7 +83,7 @@
       <div class="crm-section additional_participants-section" id="noOfparticipants">
         <div class="label"></div>
         <div class="content">
-			<div class="row">
+			<div class="clearfix">
 				<div class="col-xs-12 col-sm-6">{$form.additional_participants.label}</div>
 				<div class="col-xs-12 col-sm-6">{$form.additional_participants.html|crmAddClass:'form-control'}{if $contact_id || $contact_id == NULL} &nbsp; ({ts}including yourself{/ts}){/if}</div>
 			</div>
@@ -101,11 +101,11 @@
     {include file="CRM/UF/Form/Block.tpl" fields=$customPre}
 
     {if $priceSet}
-      {if ! $quickConfig}<fieldset id="priceset" class="crm-group priceset-group">
-        <legend>{$event.fee_label}</legend>{/if}
+      {if ! $quickConfig}<fieldset id="priceset" class="crm-group priceset-group panel">
+        <legend>{$event.fee_label}</legend><div class="panel-body">{/if}
       {include file="CRM/Price/Form/PriceSet.tpl" extends="Event"}
       {include file="CRM/Price/Form/ParticipantCount.tpl"}
-      {if ! $quickConfig}</fieldset>{/if}
+      {if ! $quickConfig}</div></fieldset>{/if}
     {/if}
     {if $pcp && $is_honor_roll }
       <fieldset class="crm-group pcp-group">
@@ -144,9 +144,9 @@
     {/if}
 
     {if $form.payment_processor.label}
-      <fieldset class="crm-group payment_options-group" style="display:none;">
+      <fieldset class="panel crm-group payment_options-group" style="display:none;">
         <legend>{ts}Payment Options{/ts}</legend>
-        <div class="crm-section payment_processor-section">
+        <div class="panel-body crm-section payment_processor-section">
           <div class="label">{$form.payment_processor.label}</div>
           <div class="content">{$form.payment_processor.html}</div>
           <div class="clear"></div>
