@@ -38,44 +38,48 @@
 {if $statusMessage}
     <div class="messages status no-popup">
         <p>{$statusMessage}</p>
+        <br><br>
     </div>
 {/if}
 
-<div class="clearfix">
+<div class="row">
 
-<div class="col-xs-6 col-sm-6">
-{include file="CRM/UF/Form/Block.tpl" fields=$additionalCustomPre}
+	<div class="col-xs-6 col-sm-6">
+	{include file="CRM/UF/Form/Block.tpl" fields=$additionalCustomPre}
+	</div>
+
+	<div class="col-xs-6 col-sm-6">
+
+	{if $priceSet && $allowGroupOnWaitlist}
+		{include file="CRM/Price/Form/ParticipantCount.tpl"}
+		<div id="waiting-status" style="display:none;" class="messages status no-popup"></div>
+		<div class="messages status no-popup" style="width:25%"><span id="event_participant_status"></span></div>
+	{/if}
+
+	<div class="crm-block crm-event-additionalparticipant-form-block">
+	{if $priceSet}
+		 <fieldset id="priceset" class="crm-group priceset-group panel">
+			 <legend>{$event.fee_label}</legend>
+			 <div class="panel-body">
+				{include file="CRM/Price/Form/PriceSet.tpl" extends="Event"}
+			</div>
+		</fieldset>
+	{else}
+		{if $paidEvent}
+			<table class="form-layout-compressed table table-striped">
+				<tr class="crm-event-additionalparticipant-form-block-amount">
+					<td class="label nowrap">{$event.fee_label} <span class="marker">*</span></td>
+					<td>&nbsp;</td>
+					<td>{$form.amount.html}</td>
+				</tr>
+			</table>
+		{/if}
+	{/if}
+
+	</div>
 </div>
 
-<div class="col-xs-6 col-sm-6">
-
-{if $priceSet && $allowGroupOnWaitlist}
-    {include file="CRM/Price/Form/ParticipantCount.tpl"}
-    <div id="waiting-status" style="display:none;" class="messages status no-popup"></div>
-    <div class="messages status no-popup" style="width:25%"><span id="event_participant_status"></span></div>
-{/if}
-
-<div class="crm-block crm-event-additionalparticipant-form-block">
-{if $priceSet}
-     <fieldset id="priceset" class="crm-group priceset-group"><legend>{$event.fee_label}</legend>
-        {include file="CRM/Price/Form/PriceSet.tpl" extends="Event"}
-    </fieldset>
-{else}
-    {if $paidEvent}
-        <table class="form-layout-compressed table table-striped">
-            <tr class="crm-event-additionalparticipant-form-block-amount">
-                <td class="label nowrap">{$event.fee_label} <span class="marker">*</span></td>
-                <td>&nbsp;</td>
-                <td>{$form.amount.html}</td>
-            </tr>
-        </table>
-    {/if}
-{/if}
-
-</div>
-</div>
-
-<div class="clearfix">
+<div class="row">
 	{include file="CRM/UF/Form/Block.tpl" fields=$additionalCustomPost}
 </div>
 

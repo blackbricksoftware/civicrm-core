@@ -52,10 +52,10 @@
             {/if}
         {else} {* New participant *}
   {if $priceSet.fields}
-      <fieldset id="priceset" class="crm-group priceset-group">
+      <fieldset id="priceset" class="crm-group priceset-group panel">
             <tr class="crm-event-eventfees-form-block-price_set_amount">
-            <td class="label" style="padding-top: 10px;">{$form.amount.label}</td>
-      <td class="view-value"><table class="form-layout">{include file="CRM/Price/Form/PriceSet.tpl" extends="Event"}</td>
+				<td class="label" style="padding-top: 10px;">{$form.amount.label}</td>
+				<td class="view-value"><table class="form-layout">{include file="CRM/Price/Form/PriceSet.tpl" extends="Event"}</td>
        </fieldset>
         {else}
       {assign var=isRecordPayment value=0 }
