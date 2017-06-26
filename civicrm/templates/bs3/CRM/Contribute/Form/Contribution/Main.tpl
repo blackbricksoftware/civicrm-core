@@ -138,7 +138,7 @@
   {if $form.is_recur}
   <div class="crm-section {$form.is_recur.name}-section form-group clearfix">
     {* <div class="label col-xs-12 col-sm-6">&nbsp;</div> *}
-    <div class="content col-xs-12 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
+    <div class="content col-xs-12 col-sm-6 col-sm-offset-6">
       {$form.is_recur.html} {$form.is_recur.label} {ts}every{/ts}
       {if $is_recur_interval}
         {$form.frequency_interval.html}
