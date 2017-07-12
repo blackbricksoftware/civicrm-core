@@ -146,9 +146,9 @@
   {/crmRegion}
 
   {if $form.is_recur}
-  <div class="crm-public-form-item crm-section {$form.is_recur.name}-section">
-    <div class="label">&nbsp;</div>
-    <div class="content">
+  <div class="crm-public-form-item crm-section {$form.is_recur.name}-section clearfix">
+    <!--<div class="label">&nbsp;</div>-->
+    <div class="content col-md-6 col-md-push-6">
       {$form.is_recur.html} {$form.is_recur.label} {ts}every{/ts}
       {if $is_recur_interval}
         {$form.frequency_interval.html}
