@@ -544,8 +544,11 @@
     }
 
     $('#pricevalue').each(toggleBillingBlockIfFree).on('change', toggleBillingBlockIfFree);
+
   });
   {/literal}
+
+  currentTotal = 1; // added to cause stripe plugin to skip a check that shouldnt be done on this pages
 </script>
 {/if}
 
